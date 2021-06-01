@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".New.RegisterNewActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/white"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo">
+
+
+        </ImageView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/archivo_black"
+                    android:text="REGISTGER"
+                    android:textColor="@color/colorPrimaryOne"
+                    android:textSize="30sp"
+
+                    >
+
+
+                </TextView>
+
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/grey_radi_background">
+
+
+                    <EditText
+                        android:id="@+id/edtWorkshopName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:background="@android:color/transparent"
+                        android:hint="Workshop Name"
+                        android:padding="8dp"
+                        android:textSize="20sp"
+
+                        >
+
+
+                    </EditText>
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="24dp"
+                android:layout_toRightOf="@id/flagIcon"
+                android:background="@drawable/grey_radi_background">
+
+
+                <EditText
+                    android:id="@+id/edtOwnerName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="12dp"
+                    android:layout_marginLeft="16dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Owner"
+                    android:padding="8dp"
+                    android:textSize="20sp">
+
+
+                </EditText>
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="24dp"
+                android:layout_toRightOf="@id/flagIcon"
+                android:background="@drawable/grey_radi_background">
+
+
+                <EditText
+                    android:id="@+id/edtAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="12dp"
+                    android:layout_marginLeft="16dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Workshop Address"
+                    android:padding="8dp"
+                    android:textSize="20sp"
+
+                    >
+
+
+                </EditText>
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="24dp"
+                android:layout_toRightOf="@id/flagIcon"
+                android:background="@drawable/grey_radi_background">
+
+
+                <EditText
+                    android:id="@+id/edtEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="12dp"
+                    android:layout_marginLeft="16dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Email id"
+                    android:padding="8dp"
+                    android:textSize="20sp"
+
+                    >
+
+
+                </EditText>
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/archivo_black"
+                android:text="LOGIN Information"
+                android:textColor="@color/colorPrimaryOne"
+                android:textSize="30sp"
+
+                >
+
+
+            </TextView>
+
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+
+            <RelativeLayout
+                android:id="@+id/flagIcon"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/grey_radi_background">
+
+
+                <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+                    android:id="@+id/ccp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:ccp_hideNameCode="true"
+                    app:ccp_hidePhoneCode="true"
+                    app:ccp_showFullName="false"
+                    android:padding="7dp"
+                    app:ccp_showFlag="true"
+                    android:layout_centerVertical="true"
+
+                    />
+                <!--  <ImageView
+
+                      android:layout_width="45dp"
+                      android:layout_height="45dp"
+                      android:src="@drawable/flag"
+                      android:layout_margin="12dp">-->
+
+
+                <!--  </ImageView>-->
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_toRightOf="@id/flagIcon"
+                android:background="@drawable/grey_radi_background">
+
+
+                <EditText
+                    android:id="@+id/edtCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Country Code"
+                    android:focusable="false"
+                    android:padding="8dp"
+                    android:textSize="20sp"
+
+                    >
+
+
+                </EditText>
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="12dp"
+
+            android:layout_toRightOf="@id/flagIcon"
+            android:background="@drawable/grey_radi_background">
+
+
+            <EditText
+                android:id="@+id/edtMobileNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="12dp"
+                android:inputType="number"
+                android:maxLength="10"
+                android:layout_marginLeft="16dp"
+                android:background="@android:color/transparent"
+                android:hint="Mobile Number"
+                android:padding="8dp"
+                android:textSize="20sp">
+
+
+            </EditText>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="12dp"
+            android:layout_toRightOf="@id/flagIcon"
+
+            android:background="@drawable/grey_radi_background">
+
+
+            <EditText
+                android:id="@+id/edtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="12dp"
+                android:layout_marginLeft="16dp"
+                android:inputType="textPassword"
+                android:background="@android:color/transparent"
+                android:hint="Password"
+                android:padding="8dp"
+                android:textSize="20sp"
+
+                >
+
+
+            </EditText>
+
+
+        </RelativeLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/registerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:backgroundTint="@color/colorPrimaryRed"
+            android:fontFamily="@font/archivo_black"
+            android:padding="12dp"
+            android:text="REGISTER"
+            android:textSize="20sp"
+            app:cornerRadius="12dp">
+
+
+        </com.google.android.material.button.MaterialButton>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New User ?"
+                android:textSize="20sp"
+                android:textStyle="bold">
+
+            </TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="REGISTER"
+                android:textColor="@color/colorPrimaryOne"
+                android:textSize="20sp"
+                android:textStyle="bold"
+
+                >
+
+            </TextView>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't worry your date will not be shared with anyone."
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:singleLine="true"
+
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="please read our"
+                android:textSize="15dp"
+                android:singleLine="true"
+
+                android:textColor="@color/black"
+
+
+                />
+            <TextView
+                android:id="@+id/txtTermsConditions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Terms of service"
+                android:textSize="15dp"
+                android:singleLine="true"
+
+                android:textColor="@color/colorPrimaryOne"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" and "
+                android:singleLine="true"
+
+                android:textSize="15dp"
+                android:textColor="@color/black"
+
+
+                />
+
+            <TextView
+                android:id="@+id/txtPrivacyPolicy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="privacy policy"
+                android:textSize="15dp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimaryOne"
+
+
+                />
+
+
+        </LinearLayout>
+      <!--  <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:text="Don't worry your date will not be shared with anyone.please read our Terms of service and privacy policy"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+
+            />-->
+
+
+    </LinearLayout>
+
+
+</ScrollView>

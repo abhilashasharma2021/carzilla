@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".New.RepairOrderActivity">
+
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                app:cardCornerRadius="0dp"
+                android:backgroundTint="@color/colorPrimaryRed">
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/imgBack"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:rotation="180"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/back">
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Repair Order"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:layout_toRightOf="@+id/imgBack"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/white">
+
+
+                    </TextView>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card"
+                >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vehical Information"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/imgBack"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/black"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_toRightOf="@id/flagIcon"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/grey_radi_background"
+                    >
+
+
+
+
+                    <Spinner
+                        android:id="@+id/spinMakeModel"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        />
+
+<!--
+                    <EditText
+
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:hint="Make | Model"
+                        android:layout_margin="10dp"
+                        android:textSize="15dp"
+                        android:padding="8dp"
+                        android:background="@android:color/transparent"
+                        android:layout_width="match_parent"
+                        >
+
+
+                    </EditText>
+-->
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_toRightOf="@id/flagIcon"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/grey_radi_background"
+                    >
+
+
+
+                    <Spinner
+                        android:id="@+id/spinFuelType"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        />
+
+
+<!--
+                    <EditText
+
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:hint="Fuel type"
+                        android:layout_margin="10dp"
+                        android:textSize="15dp"
+                        android:padding="8dp"
+                        android:background="@android:color/transparent"
+                        android:layout_width="match_parent"
+                        >
+
+
+                    </EditText>
+-->
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_toRightOf="@id/flagIcon"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/grey_radi_background"
+                    >
+
+
+                    <EditText
+                        android:id="@+id/edtVehicleNumber"
+                        android:padding="8dp"
+                        android:background="@android:color/transparent"
+                        android:layout_width="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:maxLength="10"
+                        android:hint="Vehicle Number"
+                        android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZÁáÂâÃãÀàÇçÉéÊêÍíÓóÔôÕõÚú"
+                        android:layout_margin="10dp"
+                        android:textSize="15dp"
+
+                        >
+
+
+                    </EditText>
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_toRightOf="@id/flagIcon"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/grey_radi_background"
+                    >
+
+
+                    <EditText
+                        android:id="@+id/edtKiloMEter"
+                        android:padding="8dp"
+                        android:background="@android:color/transparent"
+                        android:layout_width="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:hint="Kilometer Driven"
+                        android:inputType="number"
+                        android:layout_margin="10dp"
+                        android:textSize="15dp"
+
+
+                        >
+
+
+                    </EditText>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_toRightOf="@id/flagIcon"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/grey_radi_background"
+                    >
+
+
+                    <EditText
+                        android:id="@+id/edtChasisNember"
+                        android:padding="8dp"
+                        android:background="@android:color/transparent"
+                        android:layout_width="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:hint="Chassis Number"
+                        android:layout_margin="10dp"
+                        android:textSize="15dp"
+
+
+                        >
+
+
+                    </EditText>
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_toRightOf="@id/flagIcon"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/grey_radi_background"
+                    >
+
+
+                    <EditText
+                        android:id="@+id/edtEngineNumber"
+                        android:padding="8dp"
+                        android:background="@android:color/transparent"
+                        android:layout_width="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:hint="Engine Number"
+                        android:layout_margin="10dp"
+                        android:textSize="15dp"
+
+
+                        >
+
+
+                    </EditText>
+
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ful Indicator"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/imgBack"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/black"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="8dp"
+                    xmlns:custom="http://schemas.android.com/apk/res-auto"
+
+                    android:background="@color/white">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(0)"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="30dp"
+                        android:textColor="@color/white"/>
+
+                   <!-- custom:tickColorActive="@color/black"
+                    custom:trackColorActive="@color/black"
+                    custom:trackColor="@color/black"
+                    custom:thumbColor="@color/black"-->
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/slider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="slider"
+                        android:value="0.0"
+                        custom:trackHeight="40dp"
+                        android:layout_marginStart="12dp"
+                        custom:trackColorActive="@color/black"
+                        custom:trackColorInactive="#65000000"
+                        custom:thumbColor="@color/black"
+
+
+                        custom:tickColorInactive="@color/black"
+                        android:layout_marginEnd="12dp"
+                        android:valueFrom="0.0"
+                        android:valueTo="100.0" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:layout_marginRight="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/white"/>
+
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Customer Information"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp"
+                    android:layout_toRightOf="@+id/imgBack"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/black"/>
+
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_toRightOf="@id/flagIcon"
+
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/grey_radi_background"
+                    >
+
+
+                    <EditText
+                        android:id="@+id/edtPhoneNumber"
+                        android:padding="8dp"
+                        android:background="@android:color/transparent"
+                        android:layout_width="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:hint="Phone Number"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:digits="0123456789ÁáÂâÃãÀàÇçÉéÊêÍíÓóÔôÕõÚú"
+
+                        android:layout_margin="10dp"
+                        android:textSize="15dp"
+
+
+                        >
+
+
+                    </EditText>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_toRightOf="@id/flagIcon"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/grey_radi_background"
+                    >
+
+
+                    <EditText
+                        android:id="@+id/edtCumtomerName"
+                        android:padding="8dp"
+                        android:background="@android:color/transparent"
+                        android:layout_width="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:hint="Customer Name"
+                        android:layout_margin="10dp"
+                        android:textSize="15dp"
+
+
+                        >
+
+
+                    </EditText>
+
+
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_toRightOf="@id/flagIcon"
+
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/grey_radi_background"
+                    >
+
+
+                    <EditText
+                        android:id="@+id/edtEmail"
+                        android:padding="8dp"
+                        android:background="@android:color/transparent"
+                        android:layout_width="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:hint="E-mail id"
+                        android:layout_margin="10dp"
+                        android:textSize="15dp"
+
+
+                        >
+
+
+                    </EditText>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_toRightOf="@id/flagIcon"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/grey_radi_background"
+                    >
+
+
+                    <EditText
+                        android:id="@+id/edtTaxNumber"
+                        android:padding="8dp"
+                        android:background="@android:color/transparent"
+                        android:layout_width="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:hint="Tax Number(optional)"
+                        android:layout_margin="10dp"
+                        android:textSize="15dp"
+
+
+                        >
+
+
+                    </EditText>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_toRightOf="@id/flagIcon"
+
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/grey_radi_background"
+                    >
+
+
+                    <EditText
+                        android:id="@+id/edtCustomerAddress"
+                        android:padding="8dp"
+                        android:background="@android:color/transparent"
+                        android:layout_width="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:hint="Customer Address(optional)"
+                        android:layout_margin="10dp"
+                        android:textSize="15dp"
+
+
+                        >
+
+
+                    </EditText>
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_toRightOf="@id/flagIcon"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/grey_radi_background"
+                    >
+
+
+                    <EditText
+                        android:id="@+id/edtCustomerRemark"
+                        android:padding="8dp"
+                        android:background="@android:color/transparent"
+                        android:layout_width="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:hint="Customer Remark"
+                        android:layout_margin="10dp"
+                        android:textSize="15dp"
+
+
+                        >
+
+
+                    </EditText>
+
+
+                </RelativeLayout>
+
+
+
+
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:text="Save Details"
+                    android:fontFamily="@font/archivo_black"
+                    android:textSize="16dp"
+                    android:backgroundTint="@color/colorPrimaryRed"
+                    app:cornerRadius="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="18dp"
+                    android:id="@+id/btnSaveDetails"
+                    >
+
+
+                </com.google.android.material.button.MaterialButton>
+
+
+
+
+            </LinearLayout>
+
+
+            </ScrollView>
+
+
+        </RelativeLayout>
+
+
+
+
+</RelativeLayout>

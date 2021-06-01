@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".New.UpdateSparePartActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:backgroundTint="@color/colorPrimaryRed"
+                app:cardCornerRadius="0dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp">
+
+                    <ImageView
+                        android:id="@+id/imgBack"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:padding="10dp"
+                        android:rotation="180"
+                        android:src="@drawable/back">
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/imgBack"
+                        android:text="EDIT SPARE PART "
+                        android:textColor="@color/white"
+                        android:textSize="18dp">
+
+
+                    </TextView>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card"
+                android:orientation="vertical">
+
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:text="Type"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="12dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_toRightOf="@id/flagIcon"
+                    android:background="@drawable/grey_radi_background">
+
+
+
+
+                    <Spinner
+                        android:id="@+id/spinParts"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        />
+
+                    <!--
+                                    <EditText
+
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_margin="12dp"
+                                        android:background="@android:color/transparent"
+                                        android:hint="Type"
+                                        android:padding="8dp"
+                                        android:textSize="16dp">
+
+
+                                    </EditText>
+                    -->
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:text="Spare Part Name"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="12dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_toRightOf="@id/flagIcon"
+                    android:background="@drawable/grey_radi_background">
+
+
+                    <EditText
+                        android:id="@+id/edtSparePartname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="16dp"
+                        android:background="@android:color/transparent"
+                        android:hint="Spare Part Name"
+                        android:padding="8dp"
+                        android:textSize="16dp"
+
+                        >
+
+
+                    </EditText>
+
+
+                </RelativeLayout>
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:text="Spare Part Number"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="12dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_toRightOf="@id/flagIcon"
+                    android:background="@drawable/grey_radi_background">
+
+
+                    <EditText
+                        android:id="@+id/sparePartNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="16dp"
+                        android:background="@android:color/transparent"
+                        android:hint="Spare Part Number"
+                        android:padding="8dp"
+                        android:textSize="16dp"
+
+                        >
+
+
+                    </EditText>
+
+
+                </RelativeLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_weight="1"
+
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:background="@android:color/transparent"
+                            android:text="Price"
+                            android:layout_marginTop="18dp"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginRight="12dp"
+                            android:layout_marginBottom="5dp"
+                            android:textSize="12dp"/>
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="12dp"
+                            android:background="@drawable/grey_radi_background">
+
+
+                            <EditText
+                                android:id="@+id/edtprice"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="12dp"
+                                android:layout_marginLeft="16dp"
+                                android:inputType="number"
+                                android:background="@android:color/transparent"
+                                android:hint="Price"
+                                android:padding="5dp"
+                                android:textSize="16dp"
+
+                                >
+
+
+                            </EditText>
+
+
+                        </RelativeLayout>
+
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:background="@android:color/transparent"
+                            android:text="Purchase"
+                            android:layout_marginTop="18dp"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginRight="12dp"
+                            android:layout_marginBottom="5dp"
+                            android:textSize="12dp"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="12dp"
+                            android:layout_toRightOf="@id/flagIcon"
+                            android:background="@drawable/grey_radi_background">
+
+
+                            <EditText
+                                android:id="@+id/edtPurchase"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="5dp"
+                                android:layout_marginLeft="16dp"
+                                android:background="@android:color/transparent"
+                                android:hint="Purchase"
+                                android:padding="5dp"
+                                android:textSize="16dp"
+
+                                >
+
+
+                            </EditText>
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:background="@android:color/transparent"
+                            android:text="In Stock"
+                            android:layout_marginTop="18dp"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginRight="12dp"
+                            android:layout_marginBottom="5dp"
+                            android:textSize="12dp"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:layout_marginRight="12dp"
+                            android:layout_toRightOf="@id/flagIcon"
+                            android:background="@drawable/grey_radi_background">
+
+
+                            <EditText
+                                android:id="@+id/edtinStock"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="5dp"
+                                android:layout_marginLeft="16dp"
+                                android:background="@android:color/transparent"
+                                android:hint="In Stock"
+                                android:padding="5dp"
+                                android:textSize="16dp"
+
+                                >
+
+
+                            </EditText>
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:background="@android:color/transparent"
+                            android:text="Min Stock"
+                            android:layout_marginTop="18dp"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginRight="12dp"
+                            android:layout_marginBottom="5dp"
+                            android:textSize="12dp"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="12dp"
+                            android:layout_weight="1"
+                            android:layout_toRightOf="@id/flagIcon"
+                            android:background="@drawable/grey_radi_background">
+
+
+                            <EditText
+                                android:id="@+id/edtMinStock"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="5dp"
+                                android:layout_marginLeft="16dp"
+                                android:background="@android:color/transparent"
+                                android:hint="Min Stock"
+                                android:padding="5dp"
+                                android:textSize="16dp"
+
+                                >
+
+
+                            </EditText>
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:background="@android:color/transparent"
+                            android:text="Rack"
+                            android:layout_marginTop="18dp"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginRight="12dp"
+                            android:layout_marginBottom="5dp"
+                            android:textSize="12dp"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:layout_marginRight="12dp"
+                            android:layout_toRightOf="@id/flagIcon"
+                            android:background="@drawable/grey_radi_background">
+
+
+                            <EditText
+                                android:id="@+id/edtRack"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="5dp"
+                                android:layout_marginLeft="16dp"
+                                android:background="@android:color/transparent"
+                                android:hint="Rack"
+                                android:padding="5dp"
+                                android:textSize="16dp"
+
+                                >
+
+
+                            </EditText>
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:background="@android:color/transparent"
+                            android:text="SHN"
+                            android:layout_marginTop="18dp"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginRight="12dp"
+                            android:layout_marginBottom="5dp"
+                            android:textSize="12dp"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="12dp"
+                            android:layout_weight="1"
+                            android:layout_toRightOf="@id/flagIcon"
+                            android:background="@drawable/grey_radi_background">
+
+
+                            <EditText
+                                android:id="@+id/edtShin"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="5dp"
+                                android:layout_marginLeft="16dp"
+                                android:background="@android:color/transparent"
+                                android:hint="SHN"
+                                android:padding="5dp"
+                                android:textSize="16dp"
+
+                                >
+
+
+                            </EditText>
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:text="Company Name"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="12dp"/>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_toRightOf="@id/flagIcon"
+                    android:background="@drawable/grey_radi_background">
+
+
+                    <EditText
+                        android:id="@+id/edtCompanyName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="16dp"
+                        android:background="@android:color/transparent"
+                        android:hint="Company Name"
+                        android:padding="5dp"
+                        android:textSize="16dp"
+
+                        >
+
+
+                    </EditText>
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:text="Description"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="12dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_toRightOf="@id/flagIcon"
+                    android:background="@drawable/grey_radi_background">
+
+
+                    <EditText
+                        android:id="@+id/edtDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="16dp"
+                        android:background="@android:color/transparent"
+                        android:hint="Description"
+                        android:padding="5dp"
+                        android:textSize="16dp"
+
+                        >
+
+
+                    </EditText>
+
+
+                </RelativeLayout>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSaveDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginRight="12dp"
+                    android:backgroundTint="@color/colorPrimaryRed"
+                    android:fontFamily="@font/archivo_black"
+                    android:padding="12dp"
+                    android:text="Save Details"
+                    android:textSize="16dp"
+                    app:cornerRadius="12dp">
+
+
+                </com.google.android.material.button.MaterialButton>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

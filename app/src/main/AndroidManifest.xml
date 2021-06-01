@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.carzilla">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Carzilla"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".New.UpdateEmployeeActivity"></activity>
+        <activity android:name=".New.UpdateAppointmentActivity" />
+        <activity android:name=".New.ShowInvenroeyActivity" />
+        <activity android:name=".New.UpdateSparePartActivity" />
+        <activity android:name=".New.UpdateVendorActivity" />
+        <activity android:name=".New.ShowCompletedOrderActivity" />
+        <activity android:name=".New.ShowInProgressOrderActivity" />
+        <activity android:name=".New.ShowVendorActivity" />
+        <activity android:name=".New.ShowCreatedOrderActivity" />
+        <activity android:name=".New.SHowEmployeeActivity" />
+        <activity android:name=".New.SaveExpenseActivity" />
+        <activity android:name=".New.AccountActivity" />
+        <activity android:name=".New.RepairCOunterSaleOrderActivity" />
+        <activity android:name=".New.ShowCounterSaleActivity" />
+        <activity android:name=".New.SaveSparePartActivity" />
+        <activity android:name=".New.SHowPartsMastereActivity" />
+        <activity android:name=".New.ShowServiceMasterActivity" />
+        <activity android:name=".New.PurchaseOrderActivity" />
+        <activity android:name=".New.ShowOrderActivity" />
+        <activity android:name=".New.RepairOrderActivity" />
+        <activity android:name=".New.ShowReportsActivity" />
+        <activity android:name=".New.ShowRepairTagActivity" />
+        <activity android:name=".New.ShowJonbTypeActivity" />
+        <activity android:name=".New.ShowCheckInActivity" />
+        <activity android:name=".New.AddAccessebilityActivity" />
+        <activity android:name=".New.ShowAccessiblityActivity" />
+        <activity android:name=".New.ShowIttemMasterActivity" />
+        <activity android:name=".New.AddAppointmentActivity" />
+        <activity android:name=".New.ShowAppointment" />
+        <activity android:name=".New.AddVendorActivity" />
+        <activity android:name=".New.AddEmployeeActivity" />
+        <activity
+            android:name=".New.NavigationActivity"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/Theme.Carzilla.NoActionBar" />
+        <activity android:name=".New.MobileVerificationACtivity" />
+        <activity android:name=".New.RegisterNewActivity" />
+        <activity android:name=".New.LoginNewActivity" />
+        <activity android:name=".New.NewSplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SplashActivity">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

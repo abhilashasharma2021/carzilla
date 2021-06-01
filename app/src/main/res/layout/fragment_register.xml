@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="vertical"
+    tools:context=".LoginFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@drawable/logo"
+            android:scaleType="centerCrop"
+            android:background="@color/white"
+            android:layout_gravity="center_horizontal"
+            >
+
+
+        </ImageView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/archivo_black"
+                    android:text="REGISTGER"
+                    android:textColor="@color/colorPrimaryOne"
+                    android:textSize="30sp"
+                    android:layout_marginBottom="20dp"
+
+                    >
+
+
+                </TextView>
+
+
+
+            </LinearLayout>
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/grey_radi_background"
+                    >
+
+
+                    <EditText
+                        android:padding="8dp"
+                        android:background="@android:color/transparent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Workshop Name"
+                        android:layout_margin="12dp"
+                        android:textSize="20sp"
+
+                        >
+
+
+                    </EditText>
+
+
+                </RelativeLayout>
+
+
+
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/flagIcon"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/grey_radi_background"
+                >
+
+
+                <EditText
+
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"
+                    android:hint="Owner"
+                    android:layout_margin="12dp"
+                    android:layout_marginLeft="16dp"
+                    android:padding="8dp"
+                    android:textSize="20sp"
+                    android:background="@android:color/transparent"
+                    android:layout_width="match_parent"
+                    >
+
+
+                </EditText>
+
+
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/flagIcon"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/grey_radi_background"
+                >
+
+
+                <EditText
+                    android:padding="8dp"
+                    android:background="@android:color/transparent"
+                    android:layout_width="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"
+                    android:hint="Workshop Address"
+                    android:layout_margin="12dp"
+                    android:layout_marginLeft="16dp"
+                    android:textSize="20sp"
+
+                    >
+
+
+                </EditText>
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/flagIcon"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/grey_radi_background"
+                >
+
+
+                <EditText
+                    android:padding="8dp"
+                    android:background="@android:color/transparent"
+                    android:layout_width="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"
+                    android:hint="Email id"
+                    android:layout_margin="12dp"
+                    android:layout_marginLeft="16dp"
+                    android:textSize="20sp"
+
+                    >
+
+
+                </EditText>
+
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="12dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/archivo_black"
+                android:text="LOGIN Information"
+                android:textColor="@color/colorPrimaryOne"
+                android:textSize="30sp"
+                android:layout_marginBottom="20dp"
+
+                >
+
+
+            </TextView>
+
+
+
+
+        </LinearLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+
+            <FrameLayout
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="12dp"
+                android:id="@+id/flagIcon"
+                android:background="@drawable/grey_radi_background">
+
+                <ImageView
+
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/flag"
+                    android:layout_margin="12dp">
+
+
+                </ImageView>
+
+
+            </FrameLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/flagIcon"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/grey_radi_background"
+                >
+
+
+                <EditText
+                    android:padding="8dp"
+                    android:background="@android:color/transparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Country Code"
+                    android:layout_margin="12dp"
+                    android:textSize="20sp"
+
+                    >
+
+
+                </EditText>
+
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/flagIcon"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/grey_radi_background"
+            >
+
+
+            <EditText
+
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"
+                android:hint="Mobile Number"
+                android:layout_margin="12dp"
+                android:layout_marginLeft="16dp"
+                android:padding="8dp"
+                android:textSize="20sp"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                >
+
+
+            </EditText>
+
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/flagIcon"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/grey_radi_background"
+            >
+
+
+            <EditText
+                android:padding="8dp"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:layout_margin="12dp"
+                android:layout_marginLeft="16dp"
+                android:textSize="20sp"
+
+                >
+
+
+            </EditText>
+
+
+        </RelativeLayout>
+
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:text="REGISTER"
+            android:fontFamily="@font/archivo_black"
+            android:textSize="20sp"
+            android:backgroundTint="@color/colorPrimaryRed"
+            app:cornerRadius="12dp"
+            android:layout_margin="12dp"
+            android:id="@+id/registerButton"
+            >
+
+
+        </com.google.android.material.button.MaterialButton>
+
+
+
+
+        <LinearLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New User ?"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                >
+
+            </TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REGISTER"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="4dp"
+                android:textColor="@color/colorPrimaryOne"
+
+                >
+
+            </TextView>
+
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't worry your date will not be shared with anyone.please read our Terms of service and privacy policy"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_margin="24dp"
+
+            />
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</ScrollView>

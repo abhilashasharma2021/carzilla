@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:title="@string/buy_subsciption"
+        android:icon="@drawable/job"
+        android:id="@+id/menu_subscription">
+
+    </item>
+
+    <item
+        android:title="@string/setting"
+        android:icon="@drawable/setting"
+        android:id="@+id/menu_setting">
+
+    </item>
+
+
+    <item
+        android:title="@string/service_reminder"
+        android:icon="@drawable/service_reminder"
+        android:id="@+id/menu_reminder">
+
+    </item>
+
+
+
+   <!-- <item
+
+        android:id="@+id/menuTitle"
+        android:icon="@drawable/money"
+        app:actionLayout="@layout/single_title_menu_payment"
+        >
+
+
+    </item>-->
+
+
+
+    <item
+        android:title="@string/income_due"
+        android:icon="@drawable/money"
+        android:id="@+id/menu_income_due">
+
+    </item>
+
+
+    <item
+        android:title="@string/expense_due"
+        android:icon="@drawable/expense"
+        android:id="@+id/menu_expenseDue">
+
+    </item>
+
+
+    <item
+        android:title="@string/purchase_due"
+        android:icon="@drawable/cart"
+        android:id="@+id/menu_purchase_due">
+
+    </item>
+
+
+  <!--  <item
+
+        android:id="@+id/menuTitleSupport"
+        app:actionLayout="@layout/single_title_menu_support"
+        >
+
+
+    </item>-->
+
+
+    <item
+        android:title="@string/contact_us"
+        android:icon="@drawable/contact_us"
+        android:id="@+id/menu_contact_us">
+
+    </item>
+
+
+    <item
+        android:title="@string/share"
+        android:icon="@drawable/share"
+        android:id="@+id/menu_share">
+
+    </item>
+
+
+
+
+    <item
+        android:title="@string/star"
+        android:icon="@drawable/cart"
+        android:id="@+id/menu_star">
+
+    </item>
+
+
+
+  <!--  <item
+
+        android:id="@+id/menuTitleRead"
+        app:actionLayout="@layout/single_title_menu_read"
+        >
+
+
+    </item>-->
+
+
+
+    <item
+        android:title="@string/terms"
+        android:icon="@drawable/terms"
+        android:id="@+id/menu_terms">
+
+    </item>
+
+
+    <item
+        android:title="@string/privacy_policy"
+        android:icon="@drawable/privacy"
+        android:id="@+id/menu_privacy">
+
+    </item>
+
+
+    <item
+        android:title="@string/logout"
+        android:icon="@drawable/logout"
+        android:id="@+id/menu_logout">
+
+    </item>
+
+
+
+
+
+
+
+</menu>

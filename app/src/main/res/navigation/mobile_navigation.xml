@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/homefragment">
+
+
+    <fragment
+        android:id="@+id/homefragment"
+        android:name="com.example.carzilla.New.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home2" />
+
+
+
+    <fragment
+        android:id="@+id/menu_contact_us"
+        android:name="com.example.carzilla.New.fragment.ContactUsFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_contact_us" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.carzilla.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.carzilla.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/phoneVerificationFragment"
+        android:name="com.example.carzilla.PhoneVerificationFragment"
+        android:label="fragment_phone_verification"
+        tools:layout="@layout/fragment_phone_verification" />
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.carzilla.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+    <fragment
+        android:id="@+id/menu_subscription"
+        android:name="com.example.carzilla.BuySubscriptionFragment"
+        android:label="BUY SUBSCRIPTON"
+        tools:layout="@layout/fragment_buy_subscription" />
+</navigation>

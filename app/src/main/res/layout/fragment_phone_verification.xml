@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="vertical"
+    tools:context=".LoginFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@color/white"
+            android:src="@drawable/logo"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center_horizontal"
+            >
+
+
+        </ImageView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="12dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/archivo_black"
+                android:text="Phone verification"
+                android:textColor="@color/colorPrimaryOne"
+                android:textSize="30sp"
+                android:layout_marginTop="24dp"
+
+                >
+
+
+            </TextView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="We have sent a verification code on your phone number "
+                android:textSize="18sp"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/black">
+
+            </TextView>
+
+
+            <TextView
+                android:layout_marginTop="4dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+91123456789"
+                android:textSize="18sp"
+                android:textColor="@color/black">
+
+
+            </TextView>
+
+
+        </LinearLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/grey_radi_background"
+                >
+
+
+                <EditText
+                    android:padding="8dp"
+                    android:background="@android:color/transparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Verification code"
+                    android:layout_margin="12dp"
+                    android:textSize="20sp"
+
+                    >
+
+
+                </EditText>
+
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+        <TextView
+            android:layout_margin="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Resend Code in "
+            android:textSize="20sp"
+            >
+
+
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryOne"
+            android:textSize="30sp"
+            android:text="24 S"
+            android:layout_marginLeft="12dp">
+
+
+        </TextView>
+
+
+
+
+
+
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:text="VERIFY"
+            android:fontFamily="@font/archivo_black"
+            android:textSize="24sp"
+            android:backgroundTint="@color/colorPrimaryRed"
+            app:cornerRadius="12dp"
+            android:id="@+id/verifyButton"
+            android:layout_margin="12dp"
+            >
+
+
+        </com.google.android.material.button.MaterialButton>
+
+
+
+
+        <LinearLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Problem receiving verification code?"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                >
+
+            </TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact us"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="4dp"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/colorPrimaryOne"
+
+                >
+
+            </TextView>
+
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't worry your date will not be shared with anyone.please read our Terms of service and privacy policy"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="12dp"
+
+
+            />
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</ScrollView>

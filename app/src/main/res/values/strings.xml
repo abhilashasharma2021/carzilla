@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Carzilla</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="buy_subsciption">BUY SUBSCRIPTION</string>
+    <string name="setting">Settings</string>
+    <string name="service_reminder">Service reminder</string>
+    <string name="income_due">Income due</string>
+    <string name="expense_due">Expense due</string>
+    <string name="purchase_due">Purchase due</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="share">Share</string>
+    <string name="star">Rate on play store</string>
+    <string name="logout">Logout</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms">Terms and Conditions</string>
+    <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="ok">Ok</string>
+    <string name="logging_you_out">Logging you out.......</string>
+    <string name="cancel">Cancel</string>
+    <string name="created_order">CREATED ORDER</string>
+    <string name="in_progress_order">In Progress Order</string>
+    <string name="completed_order">Completed Order</string>
+    <string name="all">All</string>
+</resources>

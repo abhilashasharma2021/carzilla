@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".New.fragment.ContactUsFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:cardCornerRadius="0dp"
+        android:backgroundTint="#022F40">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            >
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:rotation="180"
+                android:padding="10dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/back"></ImageView>
+
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:paddingLeft="15dp"
+                android:layout_toLeftOf="@+id/imgcar"
+                android:text="NEED HELP?"
+                android:textStyle="bold"
+                android:layout_toRightOf="@+id/imgBack"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:textColor="#ffffff">
+            </TextView>
+
+
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/card"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+
+
+
+    <LinearLayout
+        android:id="@+id/linearEmail"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/relative"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imgprofile"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/img_email"
+                    app:tint="#022F40" />
+
+
+                <TextView
+                    android:id="@+id/txtName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email Us"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:singleLine="true"
+                    android:layout_toRightOf="@+id/imgprofile"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_below="@+id/imgprofile"
+                    android:id="@+id/txtEnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="a@gmail.com "
+                    android:layout_marginRight="70dp"
+                    android:textSize="13dp"
+                    android:layout_marginTop="0dp"
+                    android:textColor="#40000000"
+                    android:singleLine="true"
+                    android:layout_marginLeft="15dp"
+                    android:padding="2dp"
+                    />
+
+
+
+
+            </RelativeLayout>
+
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearCall"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+
+
+
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imgCall"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/img_call"
+                        app:tint="#022F40" />
+
+
+                    <TextView
+                        android:id="@+id/txtName1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Call"
+                        android:textSize="15dp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginLeft="5dp"
+                        android:singleLine="true"
+                        android:layout_toRightOf="@+id/imgCall"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_below="@+id/imgCall"
+                        android:id="@+id/txtnumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="a@gmail.com "
+                        android:layout_marginRight="70dp"
+                        android:textSize="13dp"
+                        android:textColor="#40000000"
+                        android:singleLine="true"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginLeft="15dp"
+                        android:padding="2dp"
+                        />
+
+
+
+
+                </RelativeLayout>
+
+
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+
+
+
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imgChat"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/img_chat"
+                        app:tint="#022F40" />
+
+
+                    <TextView
+                        android:id="@+id/txtName2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Chat"
+                        android:textSize="15dp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginLeft="5dp"
+                        android:singleLine="true"
+                        android:layout_toRightOf="@+id/imgChat"
+                        android:textStyle="bold"/>
+
+
+
+
+
+
+                </RelativeLayout>
+
+
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/linearWhatsApp"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+
+
+
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imgEhatsApp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/img_whatsapp" />
+
+
+                    <TextView
+                        android:id="@+id/txtName3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Whats App"
+                        android:textSize="15dp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginLeft="5dp"
+                        android:singleLine="true"
+                        android:layout_toRightOf="@+id/imgEhatsApp"
+                      />
+
+
+
+
+
+
+                </RelativeLayout>
+
+
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearMessage"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+
+
+
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imgFacebook"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/img_message" />
+
+
+                    <TextView
+                        android:id="@+id/txtName4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Message"
+                        android:textSize="15dp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginLeft="5dp"
+                        android:singleLine="true"
+                        android:layout_toRightOf="@+id/imgFacebook"
+                        />
+
+
+
+
+
+
+                </RelativeLayout>
+
+
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
