@@ -1,7 +1,5 @@
 package com.example.carzilla.New;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -18,12 +16,12 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
-import com.example.carzilla.New.adapter.ShowCreateeAdapter;
-import com.example.carzilla.New.model.ShowEmployeeGetSet;
 import com.example.carzilla.New.other.AppsContants;
 import com.example.carzilla.New.other.BaseUrl;
 import com.example.carzilla.R;
@@ -44,7 +42,7 @@ public class UpdateAppointmentActivity extends AppCompatActivity {
     ArrayList<String> arrayMakeModelName;
     String strMakeModelId = "", strMakeModelName = "";
     String strShopID = "";
-    EditText edtVechileNumber, edtDateofBirth, edtCustomername, edtPhoneNumber, edtEmail, edtddress, edtRemark,edtServicePackage;
+    EditText edtVechileNumber, edtDateofBirth, edtCustomername, edtPhoneNumber, edtEmail, edtddress, edtRemark, edtServicePackage;
     Button btnAppointment;
 
     String st_date = "";
@@ -116,8 +114,7 @@ public class UpdateAppointmentActivity extends AppCompatActivity {
                     Toast.makeText(UpdateAppointmentActivity.this, "please enter phone number", Toast.LENGTH_SHORT).show();
                 } else if (stredtEmail.equals("")) {
                     Toast.makeText(UpdateAppointmentActivity.this, "please enter email ", Toast.LENGTH_SHORT).show();
-                }
-                else if (!stredtEmail.matches(emailPattern)) {
+                } else if (!stredtEmail.matches(emailPattern)) {
                     Toast.makeText(UpdateAppointmentActivity.this, "Invalid email", Toast.LENGTH_SHORT).show();
 
                 } else if (stredtddress.equals("")) {
@@ -125,7 +122,7 @@ public class UpdateAppointmentActivity extends AppCompatActivity {
                 } else if (stredtRemark.equals("")) {
                     Toast.makeText(UpdateAppointmentActivity.this, "please enter remark", Toast.LENGTH_SHORT).show();
                 } else {
-                     AddAppointment(stredtVechileNumber,stredtDateofBirth,stredtCustomername,stredtPhoneNumber,stredtEmail,stredtddress,stredtRemark);
+                    AddAppointment(stredtVechileNumber, stredtDateofBirth, stredtCustomername, stredtPhoneNumber, stredtEmail, stredtddress, stredtRemark);
                 }
             }
         });
@@ -174,6 +171,8 @@ public class UpdateAppointmentActivity extends AppCompatActivity {
 
 
     public void show_Favourite() {
+        Toast.makeText(this, "" + strShopID, Toast.LENGTH_SHORT).show();
+
         final ProgressDialog dialog = new ProgressDialog(UpdateAppointmentActivity.this);
         dialog.setMessage("please wait..");
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
@@ -195,8 +194,6 @@ public class UpdateAppointmentActivity extends AppCompatActivity {
                             for (int i = 0; i < jsonArray.length(); i++) {
 
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-
-
                                 String appointment_id = jsonObject.getString("appointment_id");
                                 String appointment_day = jsonObject.getString("appointment_day");
                                 String customer_name = jsonObject.getString("customer_name");
@@ -209,15 +206,14 @@ public class UpdateAppointmentActivity extends AppCompatActivity {
                                 String service_package = jsonObject.getString("service_package");
 
 
-                                 edtVechileNumber.setText(vehicle_number);
-                            edtDateofBirth.setText(service_date);
-                               edtCustomername.setText(customer_name);
+                                edtVechileNumber.setText(vehicle_number);
+                                edtDateofBirth.setText(service_date);
+                                edtCustomername.setText(customer_name);
                                 edtPhoneNumber.setText(phone_number);
-                              edtEmail.setText(email);
-                                 edtddress.setText(customer_address);
+                                edtEmail.setText(email);
+                                edtddress.setText(customer_address);
                                 edtRemark.setText(customer_remark);
                                 edtServicePackage.setText(service_package);
-
 
 
                             }

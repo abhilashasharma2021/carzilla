@@ -19,7 +19,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Carzilla"
         android:usesCleartextTraffic="true">
-        <activity android:name=".New.UpdateEmployeeActivity"></activity>
+        <activity android:name=".New.newwork.HomeActivity"></activity>
+        <activity android:name=".New.UpdateEmployeeActivity" />
         <activity android:name=".New.UpdateAppointmentActivity" />
         <activity android:name=".New.ShowInvenroeyActivity" />
         <activity android:name=".New.UpdateSparePartActivity" />
@@ -54,9 +55,9 @@
             android:name=".New.NavigationActivity"
             android:label="@string/title_activity_navigation"
             android:theme="@style/Theme.Carzilla.NoActionBar" />
-        <activity android:name=".New.MobileVerificationACtivity" />
-        <activity android:name=".New.RegisterNewActivity" />
-        <activity android:name=".New.LoginNewActivity" />
+        <activity android:name=".New.newwork.MobileVerificationACtivity"></activity>
+        <activity android:name=".New.newwork.RegisterNewActivity" />
+        <activity android:name=".New.newwork.LoginNewActivity" />
         <activity android:name=".New.NewSplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -65,16 +66,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".SplashActivity">
-
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            -->
-        </activity>
+        <activity android:name=".SplashActivity"></activity>
 
         <meta-data
             android:name="preloaded_fonts"

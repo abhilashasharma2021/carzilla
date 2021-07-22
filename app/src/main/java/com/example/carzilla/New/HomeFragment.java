@@ -138,7 +138,7 @@ startActivity(new Intent(getActivity(),ShowCreatedOrderActivity.class));
         drawerMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                drawer.openDrawer(GravityCompat.START);
+//                drawer.openDrawer(GravityCompat.START);
             }
         });
 
@@ -209,7 +209,7 @@ startActivity(new Intent(getActivity(),ShowCreatedOrderActivity.class));
             }
         });
 
-        showCount();
+        //showCount();
 
 
 
@@ -219,12 +219,10 @@ startActivity(new Intent(getActivity(),ShowCreatedOrderActivity.class));
     @Override
     public void onResume() {
         super.onResume();
-        showCount();
+    //    showCount();
     }
 
     public void showCount() {
-
-
 
         final ProgressDialog dialog = new ProgressDialog(getActivity());
         dialog.setMessage("please wait..");

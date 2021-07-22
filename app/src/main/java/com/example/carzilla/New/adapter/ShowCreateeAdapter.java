@@ -3,7 +3,6 @@ package com.example.carzilla.New.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,22 +45,14 @@ public class ShowCreateeAdapter extends RecyclerView.Adapter<ShowCreateeAdapter.
     public void onBindViewHolder(@NonNull final ShowCreateeAdapter.ViewHolder holder, int position) {
 
         final ShowEmployeeGetSet favouriteModal=favouriteList.get(position);
-
-
-
-
-
-
         holder.txtName.setText(favouriteModal.getCreated_at());
         holder.txtComment.setText(favouriteModal.getDate());
         holder.txtCustomerName.setText(favouriteModal.getCustomer_name());
         holder.txtCustomerMobileNumber.setText(favouriteModal.getPhone_number());
 
-
         holder.imgEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 AppsContants.sharedpreferences = context.getSharedPreferences(AppsContants.MyPREFERENCES, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = AppsContants.sharedpreferences.edit();
                 editor.putString(AppsContants.AppointmwntID, favouriteModal.getAppointment_id());

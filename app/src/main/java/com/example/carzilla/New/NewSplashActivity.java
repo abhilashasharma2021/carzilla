@@ -1,8 +1,5 @@
 package com.example.carzilla.New;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
@@ -12,10 +9,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Toast;
 
-import com.example.carzilla.MainActivity;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.carzilla.New.newwork.HomeActivity;
+import com.example.carzilla.New.newwork.LoginNewActivity;
 import com.example.carzilla.New.other.AppsContants;
 import com.example.carzilla.R;
-import com.example.carzilla.SplashActivity;
 
 import static android.media.MediaRecorder.VideoSource.CAMERA;
 
@@ -32,7 +32,7 @@ String strShopUserId="";
 
         AppsContants.sharedpreferences = getSharedPreferences(AppsContants.MyPREFERENCES, Context.MODE_PRIVATE);
          strShopUserId = AppsContants.sharedpreferences.getString(AppsContants.ShopUserId, "");
-
+        Toast.makeText(this, ""+strShopUserId, Toast.LENGTH_SHORT).show();
 
       /*  new Handler().postDelayed(new Runnable() {
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
@@ -65,7 +65,7 @@ String strShopUserId="";
                     }
 
                  else {
-                        Intent i = new Intent(NewSplashActivity.this,NavigationActivity .class);
+                        Intent i = new Intent(NewSplashActivity.this, HomeActivity.class);
                         startActivity(i);
                         finish();
                     }
@@ -96,7 +96,7 @@ String strShopUserId="";
                     }
 
                     else {
-                        Intent i = new Intent(NewSplashActivity.this,NavigationActivity .class);
+                        Intent i = new Intent(NewSplashActivity.this,HomeActivity .class);
                         startActivity(i);
                         finish();
                     }
@@ -118,7 +118,7 @@ String strShopUserId="";
                 }
 
                 else {
-                    Intent i = new Intent(NewSplashActivity.this,NavigationActivity .class);
+                    Intent i = new Intent(NewSplashActivity.this,HomeActivity .class);
                     startActivity(i);
                     finish();
                 }

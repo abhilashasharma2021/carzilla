@@ -6,7 +6,6 @@
     android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_below="@+id/card"
         android:orientation="vertical"
         android:background="#0D000000"
         android:layout_height="wrap_content">
@@ -38,9 +37,10 @@
 
                 <ImageView
                     android:id="@+id/imgEdit"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:padding="5dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:padding="12dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
                     android:src="@drawable/img_edit"

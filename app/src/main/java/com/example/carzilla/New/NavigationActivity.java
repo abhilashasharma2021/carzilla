@@ -11,45 +11,39 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
-import android.view.MenuItem;
-import android.view.View;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.carzilla.BuildConfig;
-import com.example.carzilla.MainActivity;
 import com.example.carzilla.New.other.AppsContants;
 import com.example.carzilla.New.other.BaseUrl;
 import com.example.carzilla.R;
-import com.example.carzilla.SplashActivity;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
-import androidx.annotation.RequiresApi;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class NavigationActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-   public static DrawerLayout drawer;
+    public static DrawerLayout drawer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,8 +60,7 @@ public class NavigationActivity extends AppCompatActivity {
         });*/
 
 
-
-      //  NavigationView navigationView = findViewById(R.id.nav_view);
+        //  NavigationView navigationView = findViewById(R.id.nav_view);
         //View headerView = navigationView.getHeaderView(0);
 
         drawer = findViewById(R.id.drawer_layout);
@@ -91,14 +84,11 @@ public class NavigationActivity extends AppCompatActivity {
                 return true;
             }
         });
-        menu_terms.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
+        menu_terms.setOnMenuItemClickListener(item -> {
 
-                termsconditions();
+            termsconditions();
 
-                return true;
-            }
+            return true;
         });
         menu_privacy.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
@@ -183,7 +173,7 @@ public class NavigationActivity extends AppCompatActivity {
 
                 Button pbutton = alert.getButton(DialogInterface.BUTTON_POSITIVE);
 
-               // pbutton.setTextColor(Color.TRANSPARENT);
+                // pbutton.setTextColor(Color.TRANSPARENT);
 
                 pbutton.setTextColor(Color.parseColor("#38AECC"));
 
@@ -201,7 +191,7 @@ public class NavigationActivity extends AppCompatActivity {
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-       // NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        // NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
@@ -244,7 +234,7 @@ public class NavigationActivity extends AppCompatActivity {
                             if (response.getString("message").equals("successful")) {
                                 dialog.dismiss();
 
-                               String  StrData = response.getString("data");
+                                String StrData = response.getString("data");
 
 
                                 WebView theWebPage = new WebView(NavigationActivity.this);
@@ -254,11 +244,7 @@ public class NavigationActivity extends AppCompatActivity {
                                 theWebPage.loadUrl(StrData);
 
 
-
                                 Toast.makeText(NavigationActivity.this, response.getString("message"), Toast.LENGTH_SHORT).show();
-
-
-
 
 
                             } else {

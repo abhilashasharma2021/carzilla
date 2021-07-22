@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".New.newwork.fragments.OrderDetailsFragment">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/colorPrimaryRed">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                android:padding="10dp"
+                    android:src="@drawable/abc_vector_test"
+                    android:background="?attr/selectableItemBackground"
+                    android:id="@+id/imageViewBack"/>
+
+
+
+
+
+            </RelativeLayout>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="14dp"
+                app:cardElevation="5dp"
+                android:id="@+id/cardViewOrderStatus">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Order Status"
+    android:textColor="@color/textViewColor"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="5dp"/>
+
+
+
+                </LinearLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="14dp"
+            app:cardElevation="5dp"
+            android:id="@+id/cardViewOrderDetails">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Audi A6"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/textViewColor"
+                android:id="@+id/textViewTitle"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewSubTtile"
+                android:layout_below="@+id/textViewTitle"
+                android:layout_marginStart="10dp"
+                android:textSize="12dp"
+                android:text="2002 Toyota Corolla | 2007 | Diesel"
+                android:textColor="@color/textViewColor"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="7.5dp"
+          android:layout_toStartOf="@+id/imageViewArrowUp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="@color/colorPrimaryRed"
+                android:id="@+id/materialCardViewAdd">
+
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_plus"
+                    app:tint="@color/white" />
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/imageViewArrowUp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:rotation="180"
+                android:src="@drawable/ic_arrow"
+                app:tint="@color/grey" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/imageViewArrowDown"
+                android:layout_alignParentEnd="true"
+                android:rotation="0"
+                android:layout_marginEnd="10dp"
+                android:layout_below="@+id/imageViewArrowUp"
+                android:src="@drawable/ic_arrow"
+                app:tint="@color/grey" />
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/materialCardViewAdd"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:visibility="gone"
+                android:id="@+id/rvShowAddedTags"/>
+
+
+
+
+
+</RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="14dp"
+                app:cardElevation="5dp"
+                android:id="@+id/cardViewOrderTag">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Repair TAG (0)"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/textViewColor"
+                        android:id="@+id/textViewTitle2"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewSubTtile2"
+                        android:layout_below="@+id/textViewTitle2"
+                        android:layout_marginStart="10dp"
+                        android:textSize="12dp"
+                        android:text="2002 Toyota Corolla | 2007 | Diesel"
+                        android:textColor="@color/textViewColor"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="7.5dp"
+                        android:layout_toStartOf="@+id/imageViewArrowUp2"
+                        android:layout_marginEnd="10dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="14dp"
+                        app:cardBackgroundColor="@color/colorPrimaryRed"
+                        android:id="@+id/materialCardViewReapairTagAdd">
+
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_plus"
+                            app:tint="@color/white" />
+
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/imageViewArrowUp2"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:rotation="180"
+                        android:src="@drawable/ic_arrow"
+                        app:tint="@color/grey" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/imageViewArrowDown2"
+                        android:layout_alignParentEnd="true"
+                        android:rotation="0"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@+id/imageViewArrowUp2"
+                        android:src="@drawable/ic_arrow"
+                        app:tint="@color/grey" />
+
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@id/materialCardViewReapairTagAdd"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:visibility="gone"
+                            android:id="@+id/rvShowAddedTags1"/>
+
+
+
+
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="14dp"
+                app:cardElevation="5dp"
+                android:id="@+id/cardViewOrderService">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Services (0)"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/textViewColor"
+                        android:id="@+id/textViewTitle3"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewSubTtile3"
+                        android:layout_below="@+id/textViewTitle3"
+                        android:layout_marginStart="10dp"
+                        android:textSize="12dp"
+                        android:text="Action | Deed | Effort"
+                        android:textColor="@color/textViewColor"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="7.5dp"
+                        android:layout_toStartOf="@+id/imageViewArrowUp3"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="14dp"
+                        app:cardBackgroundColor="@color/colorPrimaryRed"
+                        android:id="@+id/materialCardViewAdd3">
+
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_plus"
+                            app:tint="@color/white" />
+
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/imageViewArrowUp3"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:rotation="180"
+                        android:src="@drawable/ic_arrow"
+                        app:tint="@color/grey" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/imageViewArrowDown3"
+                        android:layout_alignParentEnd="true"
+                        android:rotation="0"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@+id/imageViewArrowUp3"
+                        android:src="@drawable/ic_arrow"
+                        app:tint="@color/grey" />
+
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/materialCardViewAdd3"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:visibility="gone"
+                        android:id="@+id/rvShowOrderServices"/>
+
+
+
+
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="14dp"
+                app:cardElevation="5dp"
+                android:id="@+id/cardViewOrderSpareParts">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Spare Parts (0)"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/textViewColor"
+                        android:id="@+id/textViewTitle4"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewSubTtile4"
+                        android:layout_below="@+id/textViewTitle4"
+                        android:layout_marginStart="10dp"
+                        android:textSize="12dp"
+                        android:text="Spare Parts | Electrical | Lubes"
+                        android:textColor="@color/textViewColor"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="7.5dp"
+                        android:layout_toStartOf="@+id/imageViewArrowUp4"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="14dp"
+                        app:cardBackgroundColor="@color/colorPrimaryRed"
+                        android:id="@+id/materialCardViewAdd4">
+
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_plus"
+                            app:tint="@color/white" />
+
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/imageViewArrowUp4"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:rotation="180"
+                        android:src="@drawable/ic_arrow"
+                        app:tint="@color/grey" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/imageViewArrowDown4"
+                        android:layout_alignParentEnd="true"
+                        android:rotation="0"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@+id/imageViewArrowUp4"
+                        android:src="@drawable/ic_arrow"
+                        app:tint="@color/grey" />
+
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@id/materialCardViewAdd4"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:visibility="gone"
+                        android:id="@+id/rvShowitems4"/>
+
+
+
+
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="14dp"
+                app:cardElevation="5dp"
+                android:id="@+id/cardViewOrderSpareParts5">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Select Packages (0)"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/textViewColor"
+                        android:id="@+id/textViewTitle5"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewSubTtile5"
+                        android:layout_below="@+id/textViewTitle5"
+                        android:layout_marginStart="10dp"
+                        android:textSize="12dp"
+                        android:text="A bundle of predefined goods and services"
+                        android:textColor="@color/textViewColor"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="7.5dp"
+                        android:layout_toStartOf="@+id/imageViewArrowUp5"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="14dp"
+                        app:cardBackgroundColor="@color/colorPrimaryRed"
+                        android:id="@+id/materialCardViewAdd5">
+
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_plus"
+                            app:tint="@color/white" />
+
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/imageViewArrowUp5"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:rotation="180"
+                        android:src="@drawable/ic_arrow"
+                        app:tint="@color/grey" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/imageViewArrowDown5"
+                        android:layout_alignParentEnd="true"
+                        android:rotation="0"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@+id/imageViewArrowUp5"
+                        android:src="@drawable/ic_arrow"
+                        app:tint="@color/grey" />
+
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@id/materialCardViewAdd5"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:visibility="gone"
+                        android:id="@+id/rvShowitems5"/>
+
+
+
+
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="14dp"
+                app:cardElevation="5dp"
+                android:id="@+id/cardViewOrderSpareParts6">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Check List (0)"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/textViewColor"
+                        android:id="@+id/textViewTitle6"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewSubTtile6"
+                        android:layout_below="@+id/textViewTitle6"
+                        android:layout_marginStart="10dp"
+                        android:textSize="12dp"
+                        android:text="Assests of vehicle"
+                        android:textColor="@color/textViewColor"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="7.5dp"
+                        android:layout_toStartOf="@+id/imageViewArrowUp6"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="14dp"
+                        app:cardBackgroundColor="@color/colorPrimaryRed"
+                        android:id="@+id/materialCardViewAdd6">
+
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_plus"
+                            app:tint="@color/white" />
+
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/imageViewArrowUp6"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:rotation="180"
+                        android:src="@drawable/ic_arrow"
+                        app:tint="@color/grey" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/imageViewArrowDown6"
+                        android:layout_alignParentEnd="true"
+                        android:rotation="0"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@+id/imageViewArrowUp6"
+                        android:src="@drawable/ic_arrow"
+                        app:tint="@color/grey" />
+
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@id/materialCardViewAdd6"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:visibility="gone"
+                        android:id="@+id/rvShowitems6"/>
+
+
+
+
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>

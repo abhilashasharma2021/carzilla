@@ -34,6 +34,8 @@ public class BaseUrl {
     public static String updateVendor = BaseLink + "updateVendor";
     public static String updateSpareParts = BaseLink + "updateSpareParts";
     public static String termsAndConditions = BaseLink + "termsAndConditions";
+    public static String update_order = BaseLink + "update_order";
+    public static String add_repair_tag = BaseLink + "add_repair_tag";
 
 }
 

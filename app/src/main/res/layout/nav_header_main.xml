@@ -57,9 +57,12 @@
 
         <ImageView
             android:layout_margin="12dp"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="10dp"
+            android:background="?attr/selectableItemBackground"
             android:layout_gravity="center_vertical"
+            android:id="@+id/imageViewEdit"
             android:src="@drawable/edit">
 
 

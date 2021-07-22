@@ -1,22 +1,18 @@
-package com.example.carzilla.New;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.carzilla.New.newwork;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
@@ -24,7 +20,9 @@ import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.carzilla.New.other.AppsContants;
 import com.example.carzilla.New.other.BaseUrl;
+import com.example.carzilla.New.ui.WebViewSheet;
 import com.example.carzilla.R;
+import com.jaqa.helpers.Craft;
 import com.rilixtech.widget.countrycodepicker.Country;
 import com.rilixtech.widget.countrycodepicker.CountryCodePicker;
 
@@ -32,18 +30,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Objects;
-
 public class RegisterNewActivity extends AppCompatActivity {
     Button registerButton;
 
     CountryCodePicker ccp;
-    EditText edtCode, edtMobileNumber, edtPassword;
+    EditText edtMobileNumber, edtPassword;
     EditText edtWorkshopName, edtOwnerName, edtAddress, edtEmail;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.[a-z]+";
-    TextView txtPrivacyPolicy,txtTermsConditions;
-
-
+    TextView txtPrivacyPolicy, txtTermsConditions;
+    String selectedCountryCode = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +47,7 @@ public class RegisterNewActivity extends AppCompatActivity {
 
 
         ccp = findViewById(R.id.ccp);
-        edtCode = findViewById(R.id.edtCode);
+        //     edtCode = findViewById(R.id.edtCode);
         edtMobileNumber = findViewById(R.id.edtMobileNumber);
         edtPassword = findViewById(R.id.edtPassword);
         edtWorkshopName = findViewById(R.id.edtWorkshopName);
@@ -61,15 +56,28 @@ public class RegisterNewActivity extends AppCompatActivity {
         edtEmail = findViewById(R.id.edtEmail);
         txtPrivacyPolicy = findViewById(R.id.txtPrivacyPolicy);
         txtTermsConditions = findViewById(R.id.txtTermsConditions);
+        TextView textViewLogin = findViewById(R.id.textViewLogin);
+
+        textViewLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(RegisterNewActivity.this, LoginNewActivity.class));
+                finishAffinity();
+            }
+        });
 
         txtPrivacyPolicy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                WebView theWebPage = new WebView(RegisterNewActivity.this);
-                theWebPage.getSettings().setJavaScriptEnabled(true);
-                theWebPage.getSettings().setPluginState(WebSettings.PluginState.ON);
-                setContentView(theWebPage);
-                theWebPage.loadUrl("http://maestrosinfotech.org/car_zilla/appservices/privacy_policy_1.php");
+
+
+                WebViewSheet webViewSheet = new WebViewSheet();
+                Bundle bundle = new Bundle();
+                bundle.putString("link", "http://maestrosinfotech.org/car_zilla/appservices/privacy_policy_1.php");
+                bundle.putString("title", "Privacy And Policy");
+                webViewSheet.setArguments(bundle);
+                webViewSheet.show(getSupportFragmentManager(), "tag");
             }
         });
         txtTermsConditions.setOnClickListener(new View.OnClickListener() {
@@ -78,22 +86,20 @@ public class RegisterNewActivity extends AppCompatActivity {
                 termsconditions();
             }
         });
-        //  ccp.registerPhoneNumberTextView(edtCode);
+
 
         ccp.hideNameCode(Boolean.parseBoolean("0"));
-
+        selectedCountryCode = "+" + ccp.getSelectedCountryCode();
         ccp.setOnCountryChangeListener(new CountryCodePicker.OnCountryChangeListener() {
             @Override
             public void onCountrySelected(Country selectedCountry) {
                 Toast.makeText(RegisterNewActivity.this, "Updated " + selectedCountry.getName(), Toast.LENGTH_SHORT).show();
-
+                selectedCountryCode = "+" + selectedCountry.getPhoneCode();
                 AppsContants.sharedpreferences = getSharedPreferences(AppsContants.MyPREFERENCES, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = AppsContants.sharedpreferences.edit();
-                editor.putString(AppsContants.CountryCode, "+"+selectedCountry.getPhoneCode());
+                editor.putString(AppsContants.CountryCode, "+" + selectedCountry.getPhoneCode());
                 editor.commit();
-                edtCode.setText("+" + selectedCountry.getPhoneCode());
-                Log.e("uiydfsjhnbcvxrew", selectedCountry.getIso() + "");
-                Log.e("uiydfsjhnbcvxrew", selectedCountry.getPhoneCode() + "");
+
             }
         });
 
@@ -102,54 +108,31 @@ public class RegisterNewActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
                 AppsContants.sharedpreferences = getSharedPreferences(AppsContants.MyPREFERENCES, Context.MODE_PRIVATE);
                 String strCountryCode = AppsContants.sharedpreferences.getString(AppsContants.CountryCode, "");
+                boolean isValidateFields = Craft.INSTANCE.isValidate(edtWorkshopName, "Required", false, 0)
+                        .isValidate(edtOwnerName, "Required", false, 0)
+                        .isValidate(edtAddress, "Required", false, 0)
+                        .isValidate(edtEmail, "Required", false, 0)
+                        .isValidate(edtMobileNumber, "Required", true, 10)
+                        .isValidate(edtPassword, "Required", false, 20)
+                        .getValidatedFields();
 
-                Log.e("eriuydgfjkhbmnvx",strCountryCode);
-              //  startActivity(new Intent(RegisterNewActivity.this, LoginNewActivity.class));
-
-
-                String strMobileNumber = edtMobileNumber.getText().toString().trim();
-                String strPasswordr = edtPassword.getText().toString().trim();
-                String strWorkshopName = edtWorkshopName.getText().toString().trim();
-                String strOwnerName = edtOwnerName.getText().toString().trim();
-                String strAddress = edtAddress.getText().toString().trim();
-                String strEmail = edtEmail.getText().toString().trim();
-                if (strWorkshopName.equals("")) {
-                    Toast.makeText(RegisterNewActivity.this, "please enter workshop name", Toast.LENGTH_SHORT).show();
-
-
-                } else if (strOwnerName.equals("")) {
-                    Toast.makeText(RegisterNewActivity.this, "please enter owner name", Toast.LENGTH_SHORT).show();
-
-
-                } else if (strAddress.equals("")) {
-                    Toast.makeText(RegisterNewActivity.this, "please enter address", Toast.LENGTH_SHORT).show();
-
-
-                } else if (strEmail.equals("")) {
-                    Toast.makeText(RegisterNewActivity.this, "please enter email", Toast.LENGTH_SHORT).show();
-
-
-                }   else if (!strEmail.matches(emailPattern)) {
-                    Toast.makeText(RegisterNewActivity.this, "Invalid email", Toast.LENGTH_SHORT).show();
-
-
-                }else {
-
-                    signup(strWorkshopName, strOwnerName, strAddress, strEmail, strMobileNumber, strPasswordr);
+                if (isValidateFields) {
+                    signup(edtWorkshopName.getText().toString().trim(),
+                            edtOwnerName.getText().toString().trim(),
+                            edtAddress.getText().toString().trim(),
+                            edtEmail.getText().toString().trim(),
+                            edtMobileNumber.getText().toString().trim(),
+                            edtPassword.getText().toString().trim());
 
                 }
-
-
             }
         });
 
     }
+
     public void termsconditions() {
-
-
         final ProgressDialog dialog = new ProgressDialog(RegisterNewActivity.this);
         dialog.setMessage("please wait..");
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
@@ -168,23 +151,14 @@ public class RegisterNewActivity extends AppCompatActivity {
                             if (response.getString("message").equals("successful")) {
                                 dialog.dismiss();
 
-                                String  StrData = response.getString("data");
+                                String StrData = response.getString("data");
 
-
-                                WebView theWebPage = new WebView(RegisterNewActivity.this);
-                                theWebPage.getSettings().setJavaScriptEnabled(true);
-                                theWebPage.getSettings().setPluginState(WebSettings.PluginState.ON);
-                                setContentView(theWebPage);
-                                theWebPage.loadUrl(StrData);
-
-
-
-                                Toast.makeText(RegisterNewActivity.this, response.getString("message"), Toast.LENGTH_SHORT).show();
-
-
-
-
-
+                                WebViewSheet webViewSheet = new WebViewSheet();
+                                Bundle bundle = new Bundle();
+                                bundle.putString("link", StrData);
+                                bundle.putString("title", "Terms And Conditions");
+                                webViewSheet.setArguments(bundle);
+                                webViewSheet.show(getSupportFragmentManager(), "tag");
                             } else {
                                 dialog.dismiss();
 
@@ -209,7 +183,6 @@ public class RegisterNewActivity extends AppCompatActivity {
     }
 
 
-
     public void signup(String strWorkshopName, String strOwnerName, String strAddress, String strEmail, String strMobileNumber, String strPasswordr) {
 
         final ProgressDialog dialog = new ProgressDialog(RegisterNewActivity.this);
@@ -221,7 +194,6 @@ public class RegisterNewActivity extends AppCompatActivity {
                 .addBodyParameter("owner", strOwnerName)
                 .addBodyParameter("shop_address", strAddress)
                 .addBodyParameter("email", strEmail)
-
                 .setPriority(Priority.HIGH)
                 .setTag("Please wait...")
                 .build()
@@ -234,8 +206,6 @@ public class RegisterNewActivity extends AppCompatActivity {
                             dialog.dismiss();
                             if (response.getString("message").equals("signup successfully")) {
                                 dialog.dismiss();
-                                Toast.makeText(RegisterNewActivity.this, response.getString("message"), Toast.LENGTH_SHORT).show();
-
 
                                 String str = response.getString("data");
                                 JSONArray jsonArray = new JSONArray(str);
@@ -251,17 +221,14 @@ public class RegisterNewActivity extends AppCompatActivity {
 
                                 }
 
-                                if (strMobileNumber.equals("")){
+                                if (strMobileNumber.equals("")) {
                                     Toast.makeText(RegisterNewActivity.this, "please enter mobile number", Toast.LENGTH_SHORT).show();
-                                }else if(strPasswordr.equals("")){
+                                } else if (strPasswordr.equals("")) {
                                     Toast.makeText(RegisterNewActivity.this, "please enter password", Toast.LENGTH_SHORT).show();
 
-                                }else{
-                                    Sendotp(strMobileNumber,strPasswordr);
+                                } else {
+                                    Sendotp(strMobileNumber, strPasswordr);
                                 }
-
-
-
 
 
                             } else {
@@ -289,8 +256,6 @@ public class RegisterNewActivity extends AppCompatActivity {
     }
 
     public void Sendotp(String strMobileNumber, String strPasswordr) {
-
-
         AppsContants.sharedpreferences = getSharedPreferences(AppsContants.MyPREFERENCES, Context.MODE_PRIVATE);
         String strShopID = AppsContants.sharedpreferences.getString(AppsContants.ShopID, "");
 
@@ -330,7 +295,7 @@ public class RegisterNewActivity extends AppCompatActivity {
                                     SharedPreferences.Editor editor = AppsContants.sharedpreferences.edit();
                                     editor.putString(AppsContants.ShopID, strid);
                                     editor.commit();
-
+                                    Craft.INSTANCE.putKey(RegisterNewActivity.this, "userMobileNumber", selectedCountryCode + edtMobileNumber.getText().toString());
 
                                 }
 

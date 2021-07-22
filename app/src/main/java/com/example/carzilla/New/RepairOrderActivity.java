@@ -1,12 +1,7 @@
 package com.example.carzilla.New;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.util.Log;
@@ -19,6 +14,9 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
@@ -27,6 +25,7 @@ import com.example.carzilla.New.other.AppsContants;
 import com.example.carzilla.New.other.BaseUrl;
 import com.example.carzilla.R;
 import com.google.android.material.slider.Slider;
+import com.jaqa.helpers.Craft;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -36,26 +35,23 @@ import java.util.ArrayList;
 
 public class RepairOrderActivity extends AppCompatActivity {
     ImageView imgBack;
-    Spinner spinMakeModel,spinFuelType;
+    Spinner spinMakeModel, spinFuelType;
 
     ArrayList<String> arrayMakeModelId;
     ArrayList<String> arrayMakeModelName;
     ArrayList<String> arrayTFuelypelId;
     ArrayList<String> arrayTFuelypeName;
-    String strMakeModelId="",strMakeModelName="";
-    String strTFuelypeId="",strTFuelypeName="";
-    String strShopID="";
-
+    String strMakeModelId = "", strMakeModelName = "";
+    String strTFuelypeId = "", strTFuelypeName = "";
+    String strShopID = "";
 
 
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.[a-z]+";
 
 
-
-
     Slider slider;
-    EditText edtVehicleNumber,edtKiloMEter,edtChasisNember,edtEngineNumber;
-    EditText edtPhoneNumber,edtCumtomerName,edtEmail,edtTaxNumber,edtCustomerAddress,edtCustomerRemark;
+    EditText edtVehicleNumber, edtKiloMEter, edtChasisNember, edtEngineNumber;
+    EditText edtPhoneNumber, edtCumtomerName, edtEmail, edtTaxNumber, edtCustomerAddress, edtCustomerRemark;
     Button btnSaveDetails;
 
 
@@ -71,7 +67,6 @@ public class RepairOrderActivity extends AppCompatActivity {
         strShopID = AppsContants.sharedpreferences.getString(AppsContants.ShopUserId, "");
 
 
-
         edtVehicleNumber = findViewById(R.id.edtVehicleNumber);
         edtKiloMEter = findViewById(R.id.edtKiloMEter);
         edtChasisNember = findViewById(R.id.edtChasisNember);
@@ -85,67 +80,39 @@ public class RepairOrderActivity extends AppCompatActivity {
         btnSaveDetails = findViewById(R.id.btnSaveDetails);
 
 
-        edtVehicleNumber.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
-        edtChasisNember.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
-        edtEngineNumber.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
 
+        btnSaveDetails.setOnClickListener(v -> {
 
+            String stredtVehicleNumber = edtVehicleNumber.getText().toString().trim();
+            String stredtKiloMEter = edtKiloMEter.getText().toString().trim();
+            String stredtChasisNember = edtChasisNember.getText().toString().trim();
+            String stredtEngineNumber = edtEngineNumber.getText().toString().trim();
+            String stredtPhoneNumber = edtPhoneNumber.getText().toString().trim();
+            String stredtCumtomerName = edtCumtomerName.getText().toString().trim();
+            String stredtEmail = edtEmail.getText().toString().trim();
+            String stredtTaxNumber = edtTaxNumber.getText().toString().trim();
+            String stredtCustomerAddress = edtCustomerAddress.getText().toString().trim();
+            String stredtCustomerRemark = edtCustomerRemark.getText().toString().trim();
 
-        btnSaveDetails.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            boolean isValidatefield = Craft.INSTANCE.isValidate(edtVehicleNumber, "Please enter vehicle number", false, 20)
+                    .isValidate(edtKiloMEter, "Please enter kilometer", false, 20)
+                    .isValidate(edtChasisNember, "Please enter chassis number", false, 20)
+                    .isValidate(edtEngineNumber, "Please enter engine number", false, 20)
+                    .isValidate(edtPhoneNumber, "Please enter phone number", false, 20)
+                    .isValidate(edtCumtomerName, "Please enter name", false, 20)
+                    .isValidate(edtEmail, "Please enter email", false, 20)
+                    .isValidate(edtCustomerRemark, "Please enter remark", false, 20)
+                    .getValidatedFields();
 
-                String stredtVehicleNumber= edtVehicleNumber.getText().toString().trim();
-                String stredtKiloMEter= edtKiloMEter.getText().toString().trim();
-                String stredtChasisNember= edtChasisNember.getText().toString().trim();
-                String stredtEngineNumber= edtEngineNumber.getText().toString().trim();
-                String stredtPhoneNumber= edtPhoneNumber.getText().toString().trim();
-                String stredtCumtomerName= edtCumtomerName.getText().toString().trim();
-                String stredtEmail= edtEmail.getText().toString().trim();
-                String stredtTaxNumber= edtTaxNumber.getText().toString().trim();
-                String stredtCustomerAddress= edtCustomerAddress.getText().toString().trim();
-                String stredtCustomerRemark= edtCustomerRemark.getText().toString().trim();
-
-
-
-
-                if (stredtVehicleNumber.equals("")){
-                    Toast.makeText(RepairOrderActivity.this, "please enter vehicle number", Toast.LENGTH_SHORT).show();
-                }
-                else if (stredtKiloMEter.equals("")){
-                    Toast.makeText(RepairOrderActivity.this, "please enter kilometer", Toast.LENGTH_SHORT).show();
-                }else if (stredtChasisNember.equals("")){
-                    Toast.makeText(RepairOrderActivity.this, "please enter chasis number", Toast.LENGTH_SHORT).show();
-                }else if (stredtEngineNumber.equals("")){
-                    Toast.makeText(RepairOrderActivity.this, "please enter engine number", Toast.LENGTH_SHORT).show();
-                }else if (stredtPhoneNumber.equals("")){
-                    Toast.makeText(RepairOrderActivity.this, "please enter phone number", Toast.LENGTH_SHORT).show();
-                }else if (stredtCumtomerName.equals("")){
-                    Toast.makeText(RepairOrderActivity.this, "please enter name", Toast.LENGTH_SHORT).show();
-                }else if (stredtEmail.equals("")){
-                    Toast.makeText(RepairOrderActivity.this, "please enter email", Toast.LENGTH_SHORT).show();
-                }
-                else if (!stredtEmail.matches(emailPattern)) {
-                    Toast.makeText(RepairOrderActivity
-                            .this, "Invalid email", Toast.LENGTH_SHORT).show();
+            if (isValidatefield) {
+                if (!stredtEmail.matches(emailPattern)) {
+                    edtEmail.setError("Please enter valid email address");
+                } else {
+                    AddOrder(stredtVehicleNumber, stredtKiloMEter, stredtChasisNember, stredtEngineNumber, stredtPhoneNumber, stredtCumtomerName, stredtEmail, stredtTaxNumber, stredtCustomerAddress, stredtCustomerRemark);
 
                 }
-                else if (stredtCustomerRemark.equals("")){
-                    Toast.makeText(RepairOrderActivity.this, "please enter remark", Toast.LENGTH_SHORT).show();
-                }else{
-
-                    AddOrder(stredtVehicleNumber,stredtKiloMEter,stredtChasisNember,stredtEngineNumber,stredtPhoneNumber,stredtCumtomerName,stredtEmail,stredtTaxNumber,stredtCustomerAddress,stredtCustomerRemark);
-
-                }
-
             }
         });
-
-
-
-
-
-
         imgBack = findViewById(R.id.imgBack);
         spinMakeModel = findViewById(R.id.spinMakeModel);
         spinFuelType = findViewById(R.id.spinFuelType);
@@ -165,20 +132,17 @@ public class RepairOrderActivity extends AppCompatActivity {
         });
 
 
-
-
         slider.addOnChangeListener(new Slider.OnChangeListener() {
             @Override
             public void onValueChange(@NonNull Slider slider, float value, boolean fromUser) {
 
                 strPercentage = value;
 
-                Log.e("jhgkjdghj",slider+"");
-                Log.e("jhgkjdghj",value+"");
-                Log.e("jhgkjdghj",fromUser+"");
+                Log.e("jhgkjdghj", slider + "");
+                Log.e("jhgkjdghj", value + "");
+                Log.e("jhgkjdghj", fromUser + "");
             }
         });
-
 
 
         spinFuelType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -199,7 +163,6 @@ public class RepairOrderActivity extends AppCompatActivity {
 
             }
         });
-
 
 
         spinMakeModel.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -237,10 +200,6 @@ public class RepairOrderActivity extends AppCompatActivity {
 
     public void AddOrder(String stredtVehicleNumber, String stredtKiloMEter, String stredtChasisNember, String stredtEngineNumber, String stredtPhoneNumber
             , String stredtCumtomerName, String stredtEmail, String stredtTaxNumber, String stredtCustomerAddress, String stredtCustomerRemark) {
-
-
-
-
         final ProgressDialog dialog = new ProgressDialog(RepairOrderActivity.this);
         dialog.setMessage("please wait..");
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
@@ -253,11 +212,11 @@ public class RepairOrderActivity extends AppCompatActivity {
                 .addBodyParameter("kilometer_driven", stredtKiloMEter)
                 .addBodyParameter("engine_number", stredtEngineNumber)
                 .addBodyParameter("chassis_number", stredtChasisNember)
-                .addBodyParameter("fuel_indicator", String.valueOf(strPercentage+"%"))
+                .addBodyParameter("fuel_indicator", strPercentage + "%")
                 .addBodyParameter("email", stredtEmail)
                 .addBodyParameter("phone_number", stredtPhoneNumber)
                 .addBodyParameter("customer_name", stredtCumtomerName)
-                .addBodyParameter("tax_number", stredtTaxNumber)
+                    .addBodyParameter("tax_number", stredtTaxNumber)
                 .addBodyParameter("cust_address", stredtCustomerAddress)
                 .addBodyParameter("cust_remark", stredtCustomerRemark)
                 .setPriority(Priority.HIGH)
@@ -300,11 +259,9 @@ public class RepairOrderActivity extends AppCompatActivity {
     }
 
 
-
-
     public void ShowFuelType() {
         AndroidNetworking.post(BaseUrl.fuel_type)
-                .addBodyParameter("shop_id",strShopID)
+                .addBodyParameter("shop_id", strShopID)
                 .setTag("Show Category")
                 .setPriority(Priority.HIGH)
                 .build()
@@ -330,20 +287,15 @@ public class RepairOrderActivity extends AppCompatActivity {
                                 String name = jsonObject.getString("name");
 
 
-
                                 arrayTFuelypelId.add(strCatID);
                                 arrayTFuelypeName.add(name);
 
                             }
 
 
-
-
                             ArrayAdapter adapter = new ArrayAdapter(RepairOrderActivity.this, android.R.layout.simple_spinner_item, arrayTFuelypeName);
                             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                             spinFuelType.setAdapter(adapter);
-
-
 
 
                         } catch (JSONException e) {
@@ -365,7 +317,7 @@ public class RepairOrderActivity extends AppCompatActivity {
 
     public void ShowMakeModel() {
         AndroidNetworking.post(BaseUrl.make_model)
-                .addBodyParameter("shop_id",strShopID)
+                .addBodyParameter("shop_id", strShopID)
                 .setTag("Show Category")
                 .setPriority(Priority.HIGH)
                 .build()
@@ -391,20 +343,15 @@ public class RepairOrderActivity extends AppCompatActivity {
                                 String name = jsonObject.getString("name");
 
 
-
                                 arrayMakeModelId.add(strCatID);
                                 arrayMakeModelName.add(name);
 
                             }
 
 
-
-
                             ArrayAdapter adapter = new ArrayAdapter(RepairOrderActivity.this, android.R.layout.simple_spinner_item, arrayMakeModelName);
                             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                             spinMakeModel.setAdapter(adapter);
-
-
 
 
                         } catch (JSONException e) {

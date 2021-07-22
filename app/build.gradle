@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.carzilla"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -31,7 +31,6 @@ android {
         jvmTarget = '1.8'
     }
 
-
     buildFeatures {
        viewBinding true
     }
@@ -51,6 +50,8 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.2.2'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    implementation project(path: ':httpconnection')
+    implementation project(path: ':naviagationmanage')
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
@@ -61,6 +62,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:30.0.3'
     implementation 'com.android.support:design:30.0.3'
     implementation 'com.daimajia.numberprogressbar:library:1.4@aar'
+    implementation 'com.github.GoodieBag:Pinview:v1.4'
 
 
     //

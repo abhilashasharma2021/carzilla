@@ -107,10 +107,6 @@ public class ShowOrderActivity extends AppCompatActivity {
                             for (int i = 0; i < jsonArray.length(); i++) {
 
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-
-
-
-
                                 ShowEmployeeGetSet favouriteModal = new ShowEmployeeGetSet();
                                 favouriteModal.setEmployee_id(jsonObject.getString("order_id"));
                                 favouriteModal.setCreated_at(jsonObject.getString("day"));
@@ -119,7 +115,6 @@ public class ShowOrderActivity extends AppCompatActivity {
 
 
                             }
-
 
                             layoutManager = new GridLayoutManager(ShowOrderActivity.this, 1, RecyclerView.VERTICAL, false);
                             rec_favourite.setLayoutManager(layoutManager);

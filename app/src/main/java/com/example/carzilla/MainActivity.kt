@@ -1,14 +1,23 @@
 package com.example.carzilla
 
+import android.app.ProgressDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.*
+import com.example.carzilla.New.newwork.gsonclasses.ShowAllOrders
+import com.example.carzilla.New.newwork.helper.GenricAdapter
+import com.example.carzilla.New.newwork.helper.ViewHolder
 import com.example.carzilla.databinding.ActivityMainBinding
+import com.httpconnection.httpconnectionV2.Http
+import com.httpconnection.httpconnectionV2.interfaces.IGetResponse
+import com.httpconnection.httpconnectionV2.models.Exception
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,7 +39,6 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         drawerLayout = findViewById(R.id.drawer_layout)
         setSupportActionBar(binding.contentMain.toolbar)
         // menu should be considered as top level destinations.
@@ -43,6 +51,7 @@ class MainActivity : AppCompatActivity() {
 
 //        setupActionBarWithNavController(navController, appBarConfiguration)
       //  binding.navView.setupWithNavController(navController)
+
 
 
 
@@ -110,10 +119,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         //val navController = findNavController(R.id.fragment)
+
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
-
-
-
-
 }

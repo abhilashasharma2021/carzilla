@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".New.LoginNewActivity">
+    tools:context=".New.newwork.LoginNewActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <ImageView
-            android:background="@color/white"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:src="@drawable/logo"
-            android:scaleType="centerCrop"
+            android:layout_height="220dp"
+            android:padding="25dp"
             android:layout_gravity="center_horizontal"
-            >
+            android:background="@color/white"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo">
 
 
         </ImageView>
@@ -26,8 +27,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="12dp">
+            android:layout_margin="12dp"
+            android:orientation="vertical">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -45,189 +47,149 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_regular"
                 android:text="Login or register to continue"
-                android:textSize="18sp"
-                android:textColor="@color/black">
+                android:textColor="@color/black"
+                android:textSize="18sp">
 
             </TextView>
 
         </LinearLayout>
 
 
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="2"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="2">
 
 
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="70dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="12dp"
                 android:id="@+id/flagIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="11.5dp"
                 android:background="@drawable/grey_radi_background">
-
 
 
                 <com.rilixtech.widget.countrycodepicker.CountryCodePicker
                     android:id="@+id/ccp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:ccp_hideNameCode="true"
-                    app:ccp_hidePhoneCode="true"
-                    app:ccp_showFullName="false"
-                    app:ccp_clickable="false"
-                    android:padding="7dp"
-                    app:ccp_showFlag="true"
+                    android:layout_height="48dp"
                     android:layout_centerVertical="true"
+                    android:padding="12dp"
+                    app:ccp_defaultCode="91"
+                    app:ccp_textSize="14dp"
+                    app:ccp_hideNameCode="true"
+                    app:ccp_showFlag="true"
 
                     />
+                <!--  <ImageView
 
-            <!--    <ImageView
-
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/flag"
-                    android:layout_margin="12dp">-->
+                      android:layout_width="45dp"
+                      android:layout_height="45dp"
+                      android:src="@drawable/flag"
+                      android:layout_margin="12dp">-->
 
 
-             <!--   </ImageView>-->
+                <!--  </ImageView>-->
+
 
             </RelativeLayout>
 
 
-            <RelativeLayout
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/flagIcon"
                 android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="12dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/grey_radi_background"
-                >
+                android:hint="Mobile Number"
+                android:layout_toRightOf="@id/flagIcon"
+                app:endIconMode="clear_text">
 
-
-                <EditText
-                    android:id="@+id/edtCode"
-                    android:padding="8dp"
-                    android:background="@android:color/transparent"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtMobileNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Country Code"
-                    android:focusable="false"
-                    android:layout_margin="12dp"
-                    android:textSize="20sp"
+                    android:maxLength="10"
+                    android:inputType="number" />
 
-                    >
-
-
-                </EditText>
-
-
-            </RelativeLayout>
-
+            </com.google.android.material.textfield.TextInputLayout>
 
 
         </RelativeLayout>
 
 
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/flagIcon"
             android:layout_marginStart="12dp"
-            android:layout_marginEnd="12dp"
             android:layout_marginTop="24dp"
+            android:layout_marginEnd="12dp"
             android:background="@drawable/grey_radi_background"
-            >
+            android:visibility="gone">
 
 
             <EditText
-                android:id="@+id/edtMobileNumber"
-                android:layout_centerVertical="true"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="12dp"
+                android:layout_marginLeft="16dp"
+                android:background="@android:color/transparent"
                 android:hint="Mobile Number"
-                android:layout_margin="12dp"
-                android:layout_marginLeft="16dp"
-                android:padding="8dp"
-                android:maxLength="10"
-                android:textSize="20sp"
                 android:inputType="number"
-                android:background="@android:color/transparent"
-                android:layout_width="match_parent"
-                >
-
-
-            </EditText>
-
+                android:maxLength="10"
+                android:padding="8dp"
+                android:textSize="20sp"/>
 
         </RelativeLayout>
 
 
-
-        <RelativeLayout
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/flagIcon"
             android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="12dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/grey_radi_background"
-            >
+            android:hint="Password"
+            android:layout_toRightOf="@id/flagIcon"
+            app:endIconMode="password_toggle">
 
-
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtPassword"
-                android:padding="8dp"
-                android:background="@android:color/transparent"
                 android:layout_width="match_parent"
-                android:layout_centerVertical="true"
                 android:layout_height="wrap_content"
-                android:inputType="numberPassword"
-                android:hint="Password"
-                android:layout_margin="12dp"
-                android:layout_marginLeft="16dp"
-                android:textSize="20sp"
+                android:inputType="textPassword" />
 
-                >
-
-
-            </EditText>
-
-
-        </RelativeLayout>
-
-
+        </com.google.android.material.textfield.TextInputLayout>
 
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/loginButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:backgroundTint="@color/colorPrimaryRed"
+            android:fontFamily="@font/archivo_black"
             android:padding="12dp"
             android:text="LOGIN"
-            android:fontFamily="@font/archivo_black"
             android:textSize="20sp"
-            android:backgroundTint="@color/colorPrimaryRed"
-            app:cornerRadius="12dp"
-            android:layout_margin="12dp"
-            android:id="@+id/loginButton"
-            >
+            app:cornerRadius="12dp">
 
 
         </com.google.android.material.button.MaterialButton>
 
 
-
-
         <LinearLayout
             android:id="@+id/linearSIgnup"
-            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:orientation="horizontal">
 
 
@@ -236,8 +198,7 @@
                 android:layout_height="wrap_content"
                 android:text="New User ?"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                >
+                android:textStyle="bold">
 
             </TextView>
 
@@ -245,35 +206,33 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
                 android:text="REGISTER"
+                android:textColor="@color/colorPrimaryOne"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_marginLeft="4dp"
-                android:textColor="@color/colorPrimaryOne"
 
                 >
 
             </TextView>
 
 
-
         </LinearLayout>
-
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Don't worry your date will not be shared with anyone."
-            android:textSize="15dp"
-            android:textColor="@color/black"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:singleLine="true"
-
-            android:layout_marginTop="20dp"
             android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/lato_regular"
+            android:singleLine="true"
+            android:text="Don't worry your data will not be shared with anyone."
             android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="14dp"
 
             />
 
@@ -281,42 +240,41 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginBottom="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="please read our"
-                android:textSize="15dp"
+                android:fontFamily="@font/lato_regular"
                 android:singleLine="true"
-
+                android:text="please read our"
                 android:textColor="@color/black"
+                android:textSize="14dp" />
 
-
-                />
             <TextView
                 android:id="@+id/txtTermsConditions"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Terms of service"
-                android:textSize="15dp"
+                android:fontFamily="@font/lato_regular"
                 android:singleLine="true"
-
+                android:text=" Terms of service"
                 android:textColor="@color/colorPrimaryOne"
+                android:textSize="14dp"
 
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" and "
+                android:fontFamily="@font/lato_regular"
                 android:singleLine="true"
-
-                android:textSize="15dp"
+                android:text=" and "
                 android:textColor="@color/black"
+                android:textSize="14dp"
+
 
                 />
 
@@ -324,10 +282,11 @@
                 android:id="@+id/txtPrivacyPolicy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="privacy policy"
-                android:textSize="15dp"
+                android:fontFamily="@font/lato_regular"
                 android:singleLine="true"
+                android:text="privacy policy"
                 android:textColor="@color/colorPrimaryOne"
+                android:textSize="14dp"
 
 
                 />
@@ -336,24 +295,21 @@
         </LinearLayout>
 
 
-<!--
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Don't worry your date will not be shared with anyone.please read our Terms of service and privacy policy"
-            android:textSize="18sp"
-            android:textColor="@color/black"
-            android:textAlignment="center"
-            android:layout_margin="24dp"
+        <!--
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Don't worry your date will not be shared with anyone.please read our Terms of service and privacy policy"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:layout_margin="24dp"
 
-            />
--->
-
-
+                    />
+        -->
 
 
     </LinearLayout>
-
 
 
 </ScrollView>

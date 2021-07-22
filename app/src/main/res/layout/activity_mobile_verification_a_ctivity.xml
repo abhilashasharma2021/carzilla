@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".New.MobileVerificationACtivity">
+    tools:context=".New.newwork.MobileVerificationACtivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,7 +13,8 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="220dp"
+            android:padding="25dp"
             android:background="@color/white"
             android:src="@drawable/logo"
             android:scaleType="centerCrop"
@@ -28,15 +29,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="12dp">
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/archivo_black"
                 android:text="Phone verification"
                 android:textColor="@color/colorPrimaryOne"
-                android:textSize="30sp"
-                android:layout_marginTop="24dp"
+                android:textSize="18dp"
+                android:layout_marginTop="14dp"
 
                 >
 
@@ -48,7 +50,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="We have sent a verification code on your phone number "
-                android:textSize="18sp"
+                android:textSize="14dp"
+                android:fontFamily="@font/lato_regular"
                 android:layout_marginTop="4dp"
                 android:textColor="@color/black">
 
@@ -56,11 +59,11 @@
 
 
             <TextView
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="8dp"
                 android:textStyle="bold"
+                android:id="@+id/textViewShowMobileNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="+91123456789"
                 android:textSize="18sp"
                 android:textColor="@color/black">
 
@@ -85,6 +88,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="12dp"
+                android:visibility="gone"
                 android:layout_marginEnd="12dp"
                 android:background="@drawable/grey_radi_background"
                 >
@@ -111,24 +115,47 @@
 
 
 
+            <com.goodiebag.pinview.Pinview
+                android:id="@+id/pinview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:pinWidth="50dp"
+                android:layout_marginTop="14dp"
+                app:pinHeight="50dp"
+                app:pinLength="4"
+                app:cursorVisible="false"
+                app:forceKeyboard="true"
+                app:hint="0"
+                app:textSize="8dp"
+                app:inputType="number"
+                app:password="false"/>
+
+
+
+
+
         </RelativeLayout>
         <TextView
             android:layout_margin="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
             android:text="Resend Code in "
-            android:textSize="20sp"
+            android:visibility="gone"
+            android:textSize="14dp"
             >
 
 
         </TextView>
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/textViewTimer"
+            android:fontFamily="@font/lato_regular"
             android:textColor="@color/colorPrimaryOne"
-            android:textSize="30sp"
-            android:text="24 S"
+            android:textSize="14dp"
+            android:layout_gravity="center"
             android:layout_marginLeft="12dp">
 
 
@@ -143,16 +170,19 @@
 
 
         <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="12dp"
             android:text="VERIFY"
             android:fontFamily="@font/archivo_black"
-            android:textSize="24sp"
+            android:textSize="14dp"
             android:backgroundTint="@color/colorPrimaryRed"
             app:cornerRadius="12dp"
+            android:layout_gravity="center"
             android:id="@+id/verifyButton"
-            android:layout_margin="12dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             >
 
 
@@ -165,6 +195,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:orientation="vertical">
 
 
@@ -172,7 +203,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Problem receiving verification code?"
-                android:textSize="18sp"
+                android:textSize="14dp"
                 android:textStyle="bold"
                 >
 
@@ -183,7 +214,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Contact us"
-                android:textSize="18sp"
+                android:textSize="14dp"
                 android:textStyle="bold"
                 android:layout_marginLeft="4dp"
                 android:textAlignment="center"
