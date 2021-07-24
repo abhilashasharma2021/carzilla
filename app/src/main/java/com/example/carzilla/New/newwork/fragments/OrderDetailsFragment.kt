@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.carzilla.New.newwork.fragments.servicetag.ServiceTagSheet
+import com.example.carzilla.New.newwork.fragments.spareparts.SparePartSheet
 import com.example.carzilla.New.newwork.gsonclasses.DataShowCreatedOrderDetails
 import com.example.carzilla.New.newwork.helper.BaseFragment
 import com.example.carzilla.New.newwork.helper.Connection
@@ -71,6 +73,7 @@ class OrderDetailsFragment : BaseFragment(), View.OnClickListener {
         binding.cardViewOrderTag.setOnClickListener(this)
         binding.materialCardViewAdd3.setOnClickListener(this)
         binding.cardViewOrderService.setOnClickListener(this)
+        binding.CardViewAddSpareParts.setOnClickListener(this)
         showAddedtags()
         showCreatedOrderDetail()
     }
@@ -89,6 +92,11 @@ class OrderDetailsFragment : BaseFragment(), View.OnClickListener {
                 val openTagSheet = ServiceTagSheet(this)
                 openTagSheet.show(requireActivity().supportFragmentManager, "tag")
             }
+
+            binding.CardViewAddSpareParts -> {
+                val openTagSheet = SparePartSheet(this)
+                openTagSheet.show(requireActivity().supportFragmentManager, "tag")
+            }
             binding.cardViewOrderTag -> {
                 binding.rvShowAddedTags1.isVisible = !binding.rvShowAddedTags1.isVisible
             }
@@ -104,10 +112,7 @@ class OrderDetailsFragment : BaseFragment(), View.OnClickListener {
             arr.add(DataShowTags("Volkswagen"))
         }
 
-        binding.rvShowAddedTags1.apply {
-            layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
-            adapter = showTags(arr)
-        }
+
     }
 
     fun showCreatedOrderDetail(){
@@ -116,11 +121,20 @@ class OrderDetailsFragment : BaseFragment(), View.OnClickListener {
             .build()
             .executeString(object : IGetResponse {
                 override fun onResponse(response: String?) {
-                    Log.e("OrderDetailsFragment", "onResponse: $response");
+                    Log.e("OrderDetailsFragment", "onResponse:showCreatedOrderDetail $response");
                     if (response?.isNotBlank()== true){
                         val getData = Http().createModelFromClass<DataShowCreatedOrderDetails>(response)
                         if (getData.result == true){
                             with(binding){
+                                textViewRepaireCount.text = "Repair TAG (${getData.repairtag_count})"
+                                textViewServieCount.text = "Services (${getData.services_count})"
+                                textViewSparePartsCount.text = "Spare Parts (${getData.spare_parts_count})"
+                                textViewPackageCount.text = "Select Packages  (${getData.package_count})"
+                                textViewCheckListCount.text = "Check List  (${getData.checklist_count})"
+                                binding.rvShowAddedTags1.apply {
+                                    layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
+                                    adapter = showTags(getData.repaire_tag as ArrayList<DataShowCreatedOrderDetails.RepaireTag>)
+                                }
                                 rvShowOrderServices.apply {
                                     layoutManager = LinearLayoutManager(requireActivity())
                                     adapter = RvShowAddedServices(getData.services as ArrayList<DataShowCreatedOrderDetails.Service>)
@@ -141,16 +155,16 @@ class OrderDetailsFragment : BaseFragment(), View.OnClickListener {
 }
 
 data class DataShowTags(val dummy: String)
-class showTags(items: ArrayList<DataShowTags>) : GenricAdapter<DataShowTags>(items) {
+class showTags(items: ArrayList<DataShowCreatedOrderDetails.RepaireTag>) : GenricAdapter<DataShowCreatedOrderDetails.RepaireTag>(items) {
     var mColors = arrayOf(
         "#45ddc0", "#dea42d", "#b83800", "#dd0244", "#c90000", "#465400",
         "#ff004d", "#ff6700", "#5d6eff", "#3955ff", "#0a24ff", "#004380", "#6b2e53",
         "#a5c996", "#f94fad", "#ff85bc", "#ff906b", "#b6bc68", "#296139"
     )
 
-    override fun configure(item: DataShowTags, holder: ViewHolder, position: Int) {
+    override fun configure(item: DataShowCreatedOrderDetails.RepaireTag, holder: ViewHolder, position: Int) {
         with(holder.itemView) {
-            // textView(R.id.textViewName).text = item.dummy
+             textView(R.id.textViewName).text = item.name
             materialCardView(R.id.cardViewSelectedTag).setCardBackgroundColor(
                 Color.parseColor(mColors[position % 40]))
         }

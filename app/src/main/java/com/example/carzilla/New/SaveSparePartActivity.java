@@ -1,11 +1,7 @@
 package com.example.carzilla.New;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +12,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
@@ -63,46 +61,43 @@ public class SaveSparePartActivity extends AppCompatActivity {
         edtDescription = findViewById(R.id.edtDescription);
         btnSaveDetails = findViewById(R.id.btnSaveDetails);
 
-        btnSaveDetails.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String stredtSparePartname = edtSparePartname.getText().toString().trim();
-                String strsparePartNumber = sparePartNumber.getText().toString().trim();
-                String stredtprice = edtprice.getText().toString().trim();
-                String stredtPurchase = edtPurchase.getText().toString().trim();
-                String stredtMinStock = edtMinStock.getText().toString().trim();
-                String stredtinStock = edtinStock.getText().toString().trim();
-                String stredtRack = edtRack.getText().toString().trim();
-                String stredtShin = edtShin.getText().toString().trim();
-                String stredtCompanyName = edtCompanyName.getText().toString().trim();
-                String stredtDescription = edtDescription.getText().toString().trim();
+        btnSaveDetails.setOnClickListener(v -> {
+            String stredtSparePartname = edtSparePartname.getText().toString().trim();
+            String strsparePartNumber = sparePartNumber.getText().toString().trim();
+            String stredtprice = edtprice.getText().toString().trim();
+            String stredtPurchase = edtPurchase.getText().toString().trim();
+            String stredtMinStock = edtMinStock.getText().toString().trim();
+            String stredtinStock = edtinStock.getText().toString().trim();
+            String stredtRack = edtRack.getText().toString().trim();
+            String stredtShin = edtShin.getText().toString().trim();
+            String stredtCompanyName = edtCompanyName.getText().toString().trim();
+            String stredtDescription = edtDescription.getText().toString().trim();
 
 
-                if (stredtSparePartname.equals("")){
-                    Toast.makeText(SaveSparePartActivity.this, "please enter part name", Toast.LENGTH_SHORT).show();
-                }else  if (strsparePartNumber.equals("")){
-                    Toast.makeText(SaveSparePartActivity.this, "please enter part number", Toast.LENGTH_SHORT).show();
-                }else  if (stredtprice.equals("")){
-                    Toast.makeText(SaveSparePartActivity.this, "please enter price", Toast.LENGTH_SHORT).show();
-                }else  if (stredtPurchase.equals("")){
-                    Toast.makeText(SaveSparePartActivity.this, "please enter purchase", Toast.LENGTH_SHORT).show();
-                }else  if (stredtMinStock.equals("")){
-                    Toast.makeText(SaveSparePartActivity.this, "please enter min stock", Toast.LENGTH_SHORT).show();
-                }else  if (stredtinStock.equals("")){
-                    Toast.makeText(SaveSparePartActivity.this, "please enter in stock", Toast.LENGTH_SHORT).show();
-                }else  if (stredtRack.equals("")){
-                    Toast.makeText(SaveSparePartActivity.this, "please enter rack", Toast.LENGTH_SHORT).show();
-                }else  if (stredtShin.equals("")){
-                    Toast.makeText(SaveSparePartActivity.this, "please enter shin", Toast.LENGTH_SHORT).show();
-                }else  if (stredtCompanyName.equals("")){
-                    Toast.makeText(SaveSparePartActivity.this, "please enter company name", Toast.LENGTH_SHORT).show();
-                }else  if (stredtDescription.equals("")){
-                    Toast.makeText(SaveSparePartActivity.this, "please enter description", Toast.LENGTH_SHORT).show();
-                }else{
+            if (stredtSparePartname.equals("")){
+                Toast.makeText(SaveSparePartActivity.this, "please enter part name", Toast.LENGTH_SHORT).show();
+            }else  if (strsparePartNumber.equals("")){
+                Toast.makeText(SaveSparePartActivity.this, "please enter part number", Toast.LENGTH_SHORT).show();
+            }else  if (stredtprice.equals("")){
+                Toast.makeText(SaveSparePartActivity.this, "please enter price", Toast.LENGTH_SHORT).show();
+            }else  if (stredtPurchase.equals("")){
+                Toast.makeText(SaveSparePartActivity.this, "please enter purchase", Toast.LENGTH_SHORT).show();
+            }else  if (stredtMinStock.equals("")){
+                Toast.makeText(SaveSparePartActivity.this, "please enter min stock", Toast.LENGTH_SHORT).show();
+            }else  if (stredtinStock.equals("")){
+                Toast.makeText(SaveSparePartActivity.this, "please enter in stock", Toast.LENGTH_SHORT).show();
+            }else  if (stredtRack.equals("")){
+                Toast.makeText(SaveSparePartActivity.this, "please enter rack", Toast.LENGTH_SHORT).show();
+            }else  if (stredtShin.equals("")){
+                Toast.makeText(SaveSparePartActivity.this, "please enter shin", Toast.LENGTH_SHORT).show();
+            }else  if (stredtCompanyName.equals("")){
+                Toast.makeText(SaveSparePartActivity.this, "please enter company name", Toast.LENGTH_SHORT).show();
+            }else  if (stredtDescription.equals("")){
+                Toast.makeText(SaveSparePartActivity.this, "please enter description", Toast.LENGTH_SHORT).show();
+            }else{
 
-                    SaveDetails(stredtSparePartname,strsparePartNumber,stredtprice,stredtPurchase,stredtMinStock,stredtinStock,
-                            stredtRack,stredtShin,stredtCompanyName,stredtDescription);
-                }
+                SaveDetails(stredtSparePartname,strsparePartNumber,stredtprice,stredtPurchase,stredtMinStock,stredtinStock,
+                        stredtRack,stredtShin,stredtCompanyName,stredtDescription);
             }
         });
 
@@ -137,12 +132,7 @@ public class SaveSparePartActivity extends AppCompatActivity {
 
 
 
-        imgBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        imgBack.setOnClickListener(v -> finish());
 
 
 
@@ -164,7 +154,7 @@ public class SaveSparePartActivity extends AppCompatActivity {
                 .addBodyParameter("type", strPartsId)
                 .addBodyParameter("sparePartName", stredtSparePartname)
                 .addBodyParameter("sparePartNumber", strsparePartNumber)
-                .addBodyParameter("price", stredtprice)
+                    .addBodyParameter("price", stredtprice)
                 .addBodyParameter("minStock", stredtMinStock)
                 .addBodyParameter("inStock", stredtinStock)
                 .addBodyParameter("purchase", stredtPurchase)

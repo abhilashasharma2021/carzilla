@@ -196,14 +196,14 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginStart="10dp"
                         android:textColor="@color/textViewColor"
-                        android:id="@+id/textViewTitle2"/>
+                        android:id="@+id/textViewRepaireCount"/>
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textViewSubTtile2"
-                        android:layout_below="@+id/textViewTitle2"
+                        android:layout_below="@+id/textViewRepaireCount"
                         android:layout_marginStart="10dp"
                         android:textSize="12dp"
                         android:text="2002 Toyota Corolla | 2007 | Diesel"
@@ -300,14 +300,14 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginStart="10dp"
                         android:textColor="@color/textViewColor"
-                        android:id="@+id/textViewTitle3"/>
+                        android:id="@+id/textViewServieCount"/>
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textViewSubTtile3"
-                        android:layout_below="@+id/textViewTitle3"
+                        android:layout_below="@+id/textViewServieCount"
                         android:layout_marginStart="10dp"
                         android:textSize="12dp"
                         android:text="Action | Deed | Effort"
@@ -400,14 +400,14 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginStart="10dp"
                         android:textColor="@color/textViewColor"
-                        android:id="@+id/textViewTitle4"/>
+                        android:id="@+id/textViewSparePartsCount"/>
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textViewSubTtile4"
-                        android:layout_below="@+id/textViewTitle4"
+                        android:layout_below="@+id/textViewSparePartsCount"
                         android:layout_marginStart="10dp"
                         android:textSize="12dp"
                         android:text="Spare Parts | Electrical | Lubes"
@@ -422,7 +422,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="14dp"
                         app:cardBackgroundColor="@color/colorPrimaryRed"
-                        android:id="@+id/materialCardViewAdd4">
+                        android:id="@+id/CardViewAddSpareParts">
 
 
                         <ImageView
@@ -464,7 +464,7 @@
                     <androidx.recyclerview.widget.RecyclerView
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
-                        android:layout_below="@id/materialCardViewAdd4"
+                        android:layout_below="@id/CardViewAddSpareParts"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="10dp"
                         android:visibility="gone"
@@ -497,18 +497,18 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Select Packages (0)"
+                            android:text="Select Packages (0)"
                         android:layout_marginTop="5dp"
                         android:layout_marginStart="10dp"
                         android:textColor="@color/textViewColor"
-                        android:id="@+id/textViewTitle5"/>
+                        android:id="@+id/textViewPackageCount"/>
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textViewSubTtile5"
-                        android:layout_below="@+id/textViewTitle5"
+                        android:layout_below="@+id/textViewPackageCount"
                         android:layout_marginStart="10dp"
                         android:textSize="12dp"
                         android:text="A bundle of predefined goods and services"
@@ -602,14 +602,14 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginStart="10dp"
                         android:textColor="@color/textViewColor"
-                        android:id="@+id/textViewTitle6"/>
+                        android:id="@+id/textViewCheckListCount"/>
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textViewSubTtile6"
-                        android:layout_below="@+id/textViewTitle6"
+                        android:layout_below="@+id/textViewCheckListCount"
                         android:layout_marginStart="10dp"
                         android:textSize="12dp"
                         android:text="Assests of vehicle"

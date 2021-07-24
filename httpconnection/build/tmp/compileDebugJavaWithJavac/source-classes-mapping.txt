@@ -1,0 +1,4 @@
+com/httpconnection/Test.java
+ com.httpconnection.Test
+com/httpconnection/BuildConfig.java
+ com.httpconnection.BuildConfig

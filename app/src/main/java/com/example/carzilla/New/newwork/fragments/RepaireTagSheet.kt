@@ -93,14 +93,12 @@ class RepaireTagSheet(val orderDetailsFragment: OrderDetailsFragment) : BottomSh
         progressDialog.show()
         Http.Post(SHOW_REPAIRE_TAG)
             .bodyParameter(
-                showReapairTag(
-                    requireActivity().getKey(Keys.ShopUserId)!!,
-                    arguments?.get("order_id") as String
-                )
+                showReapairTag(requireActivity().getKey(Keys.ShopUserId)!!, arguments?.get("order_id") as String)
             )
             .build()
             .executeString(object : IGetResponse {
                 override fun onResponse(response: String?) {
+                    Log.e("flag--", "onResponse(RepaireTagSheet: showRepairTag:64)->${showReapairTag(requireActivity().getKey(Keys.ShopUserId)!!, arguments?.get("order_id") as String)}")
                     Log.e("flag--", "onResponse(RepaireTagSheet: showRepairTag:65)->$response")
                     progressDialog.dismiss()
                     if (response?.isNotBlank() == true) {

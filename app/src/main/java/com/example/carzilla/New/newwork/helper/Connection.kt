@@ -14,6 +14,9 @@ object Connection {
     const val ADD_SERVICE_INTO_ORDER = BASE_URL.plus("addServicesInPlaceOrder")
         const val ADD_SERVICE_INTO_USER_PROIFLE = BASE_URL.plus("add_services")
         const val SHOW_CREATED_ORDER_DETAILS = BASE_URL.plus("show_order_details")
+    const val ADD_SPARE_PARTS = BASE_URL.plus("addSparePart")
+        const val SHOW_SPARE_PARTS = BASE_URL.plus("show_spare_type")
+
 
     fun showCreatedOrderCount(shopID: String): MutableMap<String, String> {
         return mutableMapOf("shop_id" to shopID)
@@ -140,6 +143,10 @@ object Connection {
 
     fun addServiceTagInToOrder(shopID: String,orderId:String,serviceId:String): MutableMap<String, String> {
         return mutableMapOf("shop_id" to shopID,"order_id" to orderId,"service_id" to serviceId   )
+    }
+
+    fun addSparePart(shopID: String,orderId:String,type:String,sparePartName:String,sparePartNumber:String): MutableMap<String, String> {
+        return mutableMapOf("shop_id" to shopID,"order_id" to orderId,"type" to type ,"sparePartName" to sparePartName,"sparePartNumber" to sparePartNumber)
     }
 
     fun showCreatedOrderDetails(shopID: String,orderId:String): MutableMap<String, String> {

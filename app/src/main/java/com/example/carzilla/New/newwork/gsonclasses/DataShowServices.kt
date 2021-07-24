@@ -8,6 +8,7 @@ data class DataShowServices(
     data class Data(
         val id: String?,
         val shop_id: String?,
+        val spare_partID: String?,
         val name: String?,
         val price: String?,
         var isSelected: Int = 0

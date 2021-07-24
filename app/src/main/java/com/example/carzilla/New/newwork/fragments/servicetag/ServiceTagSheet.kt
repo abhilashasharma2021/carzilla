@@ -1,4 +1,4 @@
-package com.example.carzilla.New.newwork.fragments
+package com.example.carzilla.New.newwork.fragments.servicetag
 
 import android.app.Dialog
 import android.app.ProgressDialog
@@ -20,6 +20,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.carzilla.New.newwork.fragments.OrderDetailsFragment
 import com.example.carzilla.New.newwork.gsonclasses.DataShowServices
 import com.example.carzilla.New.newwork.helper.Connection.ADD_SERVICE_INTO_ORDER
 import com.example.carzilla.New.newwork.helper.Connection.ADD_SERVICE_INTO_USER_PROIFLE
@@ -69,12 +70,12 @@ class ServiceTagSheet(val orderDetailsFragment: OrderDetailsFragment) : BottomSh
             behavior.state = BottomSheetBehavior.STATE_EXPANDED
             BottomSheetBehavior.from(bottomSheet).peekHeight =
                 Resources.getSystem().displayMetrics.heightPixels
-
             behavior.isDraggable = false
         }
 
         return dialog
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -88,11 +89,7 @@ class ServiceTagSheet(val orderDetailsFragment: OrderDetailsFragment) : BottomSh
         showServiceTag()
         binding.addNewServiceLayout.imageViewBack.setOnClickListener {
             isNewService = false
-            Craft.crossFadeHideShow(
-                binding.ConstraintLayoutSearch,
-                binding.addNewServiceLayout.addNewServiceLayoutParent
-            )
-
+            Craft.crossFadeHideShow(binding.ConstraintLayoutSearch, binding.addNewServiceLayout.addNewServiceLayoutParent)
             binding.addNewServiceLayout.editTextInputPrice.setText("0")
             binding.addNewServiceLayout.editTextInputQty.setText("0")
             binding.addNewServiceLayout.editTextInputTax.setText("0")
@@ -108,8 +105,7 @@ class ServiceTagSheet(val orderDetailsFragment: OrderDetailsFragment) : BottomSh
         })
         val textWatcher = object : TextWatcher {
             override fun afterTextChanged(s: Editable?) = Unit
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) =
-                Unit
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) = Unit
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 Handler().postDelayed({
@@ -122,7 +118,6 @@ class ServiceTagSheet(val orderDetailsFragment: OrderDetailsFragment) : BottomSh
                         isNewService = true
                         getServiceName = binding.editTextSearch.text.toString()
                         binding.addNewServiceLayout.textViewServiceName.text = getServiceName
-                        Log.e("ServiceTagSheet", "onTextChanged: $getServiceName")
                         Craft.crossFadeHideShow(
                             binding.addNewServiceLayout.addNewServiceLayoutParent,
                             binding.ConstraintLayoutSearch
@@ -257,7 +252,6 @@ class ServiceTagSheet(val orderDetailsFragment: OrderDetailsFragment) : BottomSh
         getSelectedItemId = item.id
 
 
-
     }
 
     fun addInToOrder() {
@@ -284,9 +278,17 @@ class ServiceTagSheet(val orderDetailsFragment: OrderDetailsFragment) : BottomSh
                             val getAsJson = JSONObject(response)
                             if (getAsJson.getString("result") == "true") {
                                 dismiss()
-                                Toast.makeText(requireActivity(),"Service Added Successfully", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(
+                                    requireActivity(),
+                                    "Service Added Successfully",
+                                    Toast.LENGTH_SHORT
+                                ).show()
                             } else {
-                                Toast.makeText(requireActivity(), getAsJson.getString("message"), Toast.LENGTH_SHORT).show()
+                                Toast.makeText(
+                                    requireActivity(),
+                                    getAsJson.getString("message"),
+                                    Toast.LENGTH_SHORT
+                                ).show()
                             }
                         }
                     }
